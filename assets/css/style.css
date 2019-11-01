@@ -1,4 +1,4 @@
-/*
+/* 
   Theme Name: Lumia
   Theme URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
   Author: BootstrapMade.com
@@ -42,18 +42,18 @@ a i:hover {
 	text-decoration:none;
 }
 
-/* Wrapper for boxed template
+ /* Wrapper for boxed template */
 #wrapper {
-	width:1000px;
+	width:1500px;
 	margin:0 auto;
 	padding:0;
 	background:#fff;
-	box-shadow: 0 1px 4px rgba(0,0,0,.2);
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2);
+	/* box-shadow: 0 1px 4px rgba(0,0,0,.2); */
+	/* -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2);
 	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.2);
-	-o-box-shadow: 0 1px 4px rgba(0,0,0,.2);
+	-o-box-shadow: 0 1px 4px rgba(0,0,0,.2); */
 }
-*/
+
 
 /* custom template style */
 .well {
