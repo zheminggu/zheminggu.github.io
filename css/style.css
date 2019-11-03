@@ -1,9 +1,58 @@
 body{
 /*	background-image: linear-gradient(to right, #ec8c69 0%, #ed6ea0 100%);*/
+background-color:#FBFBFB
+}
+
+
+/*markdown body, where I write the blog content */
+
+.markdown-body{
+	padding-top: 2rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+.markdown-body h1{
+	padding-bottom: 0.1em;
+/*	border-bottom: 1px solid #eaecef;*/
+}
+
+.markdown-body h2{
+	padding-top: 1em;
+	padding-bottom: .4em;
+	border-bottom: 1px solid #eaecef;
+}
+
+.markdown-body h3{
+	padding-top: 1em;
+	padding-bottom: .3em;
+	border-bottom: 1px solid #eaecef;
+}
+.markdown-body h4{
+	font-size: 1.25em;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.markdown-body p{
+	line-height: 2;
+	
+}
+
+.line-bottom{
+	border-bottom: 0.1rem solid #DCE0E7;
+}
+.line-left{
+	border-left: 0.1rem solid #DCE0E7;
+}
+.line-right{
+	border-right: 0.1rem solid #DCE0E7;
 }
 
 .break{
-	margin-bottom: 5rem
+	margin-bottom: 4.5rem
 }
 .before-after{
 	 -webkit-box-sizing:content-box;
@@ -15,13 +64,23 @@ body{
   padding: 3rem 1.5rem;
   text-align: center;
 }
+.footer {
+
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	line-height: 60px; /* Vertically center the text there */
+	background-color: #f5f5f5;
+}
 
 
+/*mcd-menu*/
 .mcd-menu {
     list-style: none;
     padding: 0;
     margin: 0;
-    background: #FFF;
+    background: #FBFBFB;
     /*height: 100px;*/
     border-radius: 2px;
     -moz-border-radius: 2px;
@@ -132,7 +191,7 @@ body{
     min-width: 200px;
     padding: 0;
     margin: 0;
-    background: #FFF;
+    background: #FBFBFB;
     /*border-top: 4px solid #e67e22;*/
     opacity: 0;
     visibility: hidden;
@@ -449,6 +508,11 @@ body{
       header .logo img {
           margin-bottom:10px;
       }
+	
+		
+	
   }
+
+
   
   /*background-image: linear-gradient(to right, #ec8c69 0%, #ed6ea0 100%);*/
