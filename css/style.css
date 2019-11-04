@@ -330,6 +330,9 @@ background-color:#FBFBFB
       .mcd-menu {
           margin-left:10px;
       }
+	.blog-content-nav {
+		display: none;
+	}
   }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
       .mcd-menu {
@@ -383,6 +386,9 @@ background-color:#FBFBFB
           margin-top:0;
           float:none;
       }
+	.blog-content-nav {
+		display: none;
+	}
   }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
       
@@ -470,6 +476,9 @@ background-color:#FBFBFB
             width:90%;
             float:none;
       }
+	.blog-content-nav {
+		display: none;
+	}
   }
 @media only screen and (max-width: 479px) {
       .mcd-menu { 
@@ -555,8 +564,9 @@ background-color:#FBFBFB
       header .logo img {
           margin-bottom:10px;
       }
-	
-		
+	.blog-content-nav {
+		display: none;
+	}
 	
   }
 
