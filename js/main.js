@@ -193,7 +193,7 @@
 
 			activeSection = $('section#' + $(this.element).attr("id"));
 
-			if (direction === "up") activeSection = activeSection.prev();
+			if (direction === "up") {activeSection = activeSection.prev();}
 
 			var activeLink = $('#menu-nav-wrap .nav-list a[href="#' + activeSection.attr("id") + '"]');			
 
@@ -233,7 +233,7 @@
   /* ------------------------------------------------------
 	* Placeholder Plugin Settings
 	* ------------------------------------------------------ */
-	$('input, textarea, select').placeholder()  
+	$('input, textarea, select').placeholder()  ;
 
 
   /* ------------------------------------------------------
@@ -241,7 +241,7 @@
 	* ------------------------------------------------------ */
 
 	// Example MailChimp url: http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
-	var mailChimpURL = 'http://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e65110b38d'
+	var mailChimpURL = 'http://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e65110b38d';
 
 	$('#mc-form').ajaxChimp({
 
@@ -268,8 +268,8 @@
 	  2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
 	  3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
 	  4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-	  5: '<i class="fa fa-warning"></i> E-mail address is not valid.'
-	} 
+	  5: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+	} ;
 
 
 	/* ------------------------------------------------------
@@ -325,7 +325,7 @@
 	    fadeInTime = 400,  // how slow/fast you want the button to show
 	    fadeOutTime = 400, // how slow/fast you want the button to hide
        scrollSpeed = 300, // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
-       goTopButton = $("#go-top") 
+       goTopButton = $("#go-top") ;
 
 	// Show or hide the sticky footer button
 	$(window).on('scroll', function() {
