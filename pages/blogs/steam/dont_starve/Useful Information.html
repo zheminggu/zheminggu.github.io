@@ -9,12 +9,12 @@
 	
     <link rel="icon" href="../../../../zheminggu_icon.ico">
 	<title>Dont starve\Useful information</title>
-
+ <link href="../../../../myblognavbartemplete.html" rel="import">
 	  <!-- Bootstrap CSS -->
   	<link href="../../../../blog_assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../../../blog_assets/css/style.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
-  	 
+  	
   </head>
 	
   <body>
@@ -24,67 +24,10 @@
 	<!--content-->
 	<div class = "container-fluid">
 		<div class="row">
-			<!--nav bar-->
-			<div class="col line-right">
-				<div class="before-after">
-				<nav>
-				<ul class="mcd-menu flex-column">
-					<li>
-						<a href="">
-							<i class="fas fa-robot"></i>
-							<strong>ML</strong>
-							<small>machine learning</small>
-						</a>
-					</li>
-					<li>
-						<a href="" >
-							<i class="fa fa-edit"></i>
-							<strong>Game</strong>
-							<small>game development</small>
-						</a>
-					</li>
+			<!--navbar-->
+			<div id = "navbar"></div>
 
-					<li>
-						<a href="" class="active">
-							<i class="fa fa-comments-o"></i>
-							<strong>Steam</strong>
-							<small>game mod?</small>
-						</a>
-						<ul>
-							<li><a href="#"><i class="fa fa-globe"></i>Mission</a></li>
-							<li>
-								<a href="#"><i class="fa fa-group"></i>Our Team</a>
-								<ul>
-									<li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>
-									<li>
-										<a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>
-										<ul>
-											<li><a href="#"><i class="fa fa-leaf"></i>About</a></li>
-											<li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>
-										</ul>
-									</li>
-									<li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
-								</ul>
-							</li>
-							<li><a href="#"><i class="fa fa-trophy"></i>Rewards</a></li>
-							<li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="">
-							<i class="fa fa-picture-o"></i>
-							<strong>Tips</strong>
-							<small>some tips</small>
-						</a>
-					</li>
-					
-
-				</ul>
-				</nav>
-		</div>
-			</div>
 			
-			<!--content-->
 		 	<div class="col-8 markdown-body">
 			 
 				<h1>Useful information</h1>
@@ -233,9 +176,27 @@
 	<script src="../../../../blog_assets/js/main.js"></script>
     <script src="../../../../blog_assets/js/ie10-viewport-bug-workaround.js"></script>
 	 <script> 
-    $(function(){
-      $("#header").load("../../../../myheadertemplete.html"); 
+    $(document).ready(function(){
+		$("#header").load("../../../../myheadertemplete.html"); 
+		try{
+			var link = document.querySelector('link[rel="import"]').import; 
+//			console.log(link);
+			var content = link.querySelector('#navbar');
+//			console.log("content is " + content);
+			var active_el = link.querySelector('#steam');
+//			console.log(active_el);
+			active_el.classList.add('active');
+//			console.log(content);
+			document.querySelector('#navbar').appendChild(content.cloneNode(true));
+			
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("../../../../myblognavbartemplete.html"); 
+	 	}
+	
     });
+		
+
     </script> 
   </body>
 </html>
