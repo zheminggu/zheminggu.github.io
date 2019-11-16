@@ -15,7 +15,7 @@
   	<link href="../../../css/bootstrap.min.css" rel="stylesheet">
 	
 	<link href="../../../css/style.css" rel="stylesheet">
-	 <link href="../../../myheadertemplete.html" rel="import">
+	<link  href="../../../myheadertemplete.html" rel="import">
 	<script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
   	
   </head>
@@ -23,7 +23,8 @@
   <body>
   <script>
     var link = document.querySelector('link[rel="import"]');
-	  console.log(link);
+	  console.log("link is " + link);
+	  console.log("link of import "+link.import);
     var content = link.import;
 	  console.log(content);
     // Grab DOM from warning.html's document.
