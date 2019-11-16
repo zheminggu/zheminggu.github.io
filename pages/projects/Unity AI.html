@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Gu's Unity AI</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="../../css/base.css"> 
+   <link rel="stylesheet" href="../../css/vendor.css"> 
+   <link rel="stylesheet" href="../../css/main.css"> 
+
+   <style type="text/css" media="screen">
+   	#styles { 
+   		background: rgb(255, 255, 255);
+   		padding-top: 12rem;
+		padding-bottom: 12rem;
+
+
+   	}      	
+   </style>    
+
+   <!-- script
+   ================================================== -->
+	<script src="../../js/modernizr.js"></script>
+	<script src="../../js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="../../favicon.png">
+
+</head>
+
+<body id="top" >
+	
+	<!-- header 
+   ================================================== -->
+   <header class="main-header">
+   	
+   	<div class="logo">
+	      <a href="../../index.html">Home</a>
+	   </div> 
+
+	   <a class="menu-toggle" href="#"><span>Menu</span></a>   	
+
+   </header>
+
+   <!-- main navigation 
+   ================================================== -->
+   <nav id="menu-nav-wrap">
+		<h3>Navigation</h3>   	
+		<ul class="nav-list">
+			<li><a href="../../index.html" title="">Home</a></li>
+			<li><a href="Dot and Boxes.html" title="">Dot and Boxes</a></li>
+			<li><a href="Sword and Magic.html" title="">Sword and Magic</a></li>
+			<li><a href="#" title="">Unity AI</a></li>
+			<li><a href="SCO Light Simulation.html" title="">SCO Light Simulation</a></li>					
+			<li><a href="Nanchang Virtual Character.html" title="">Virtual Character</a></li>	
+			<li><a href="My Artworks.html" title="">My Artworks</a></li>	
+		
+		</ul>
+	</nav> <!-- /menu-nav-wrap -->
+
+
+	<!-- main content wrap
+   ================================================== -->
+   <div id="main-content-wrap">
+
+
+		<!-- main content wrap
+   	================================================== -->
+   	<section id="intro">
+
+		   <!-- <div class="shadow-overlay"></div> -->
+		   
+		   <div class="row intro-content">
+		   	<div class="col-twelve">
+
+		   		<h3 class="animate-intro">Zheming Gu</h3>
+			  		
+					<h1 class="animate-intro">
+						Creating my own AI
+					</h1>	
+					<h1><br></h1>
+					
+
+			  	</div> 		   			
+		   </div>    
+
+		</section> 
+
+
+
+		<!-- styles
+   	================================================== -->
+   	<section id="styles">
+		 
+		<div class="row add-bottom text-center">
+			<div class="col-twelve tab-full color">
+				<h1>Unity AI</h1>
+				<p class="lead">
+						To pursue my childhood dream of producing AI creatures, I created this AI plugin with Unity Engine. 
+						It is the second version of my AI. The architecture has been redesigned compared to the first version.
+				</p>
+			</div>
+		</div>
+	
+		<div class="row">
+				
+			<div class="col-twelve tab-full">
+				<h2>Unity AI</h2>
+				<h3>Background</h2>
+		
+			</div>
+			<div class="col-six tab-full">
+					<strong class="normal">*Google Chrome is preferred to play the video* </strong>
+					<p class="normal indent">
+						This video shows the AI designed by my plugin. 
+						In the video, the NPC would start to attack as soon as it sees the player.
+						If it's health is not enough, some NPC chooses to escape, while others continue to attack.
+						When the health is 0, the NPC will die.
+
+					</p>
+				
+		
+					
+			</div>
+			<div class="col-six tab-full">
+					<iframe src="https://drive.google.com/file/d/1xAS56jGPACS0F2CwcLnocp5YLkQ7vCOw/preview" width="550" height="310" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			<div class="col-twelve tab-full">
+					<h3>About this project</h3>
+						<!-- <img width="480"  class="pull-right" alt="ui-image" src="../../images/Dot and Boxes/UI.png"> -->
+						<p class="normal indent">	To download the project, hit the <a href="https://drive.google.com/file/d/1l1Ge5e10O7VgB_ZEThocJIrXfun_zvTm/view?usp=sharing">Link here</a>.</p>
+						<p class="normal indent">	For more details about the code, you can jump to <a href="https://github.com/zheminggu/Game-AI">my Github</a>. </p>
+						<p class="normal indent">
+					
+							To run this project, create a new project in 2018.1 or newer Unity. 
+							Then click on the UnityAI.unitypackage to import the package. 
+							This package is a whole project, my AI plugin in it names Adamgu.
+						</p>
+					
+			</div>
+			<div class="col-ten tab-full">
+				
+			</div>
+		</div>
+
+		<div class="row add-bottom">
+		
+			<div class="col-twelve tab-full">
+			<h2>Technique Details</h2>
+			<h3>AI Architecture</h3>
+			<img width="500" class="center" alt="ProjectArchitecture-image" src="../../images/Unity AI/ProjectArchitecture.jpg">
+
+			 <p class="normal indent">
+					The central purpose of my AI is to mimic the human. So it has been split into Determine, Conscious, Behavior and Event.
+					<ul> 
+						<li>Determine: Like the human, determine is our brain to handle decisions.</li>
+						<li>Conscious: Conscious can divide into two parts, the inside conscious (to generate instinct behaviors) and the surface conscious (to produce learned behaviors).</li>
+						<li>Behaviors: Instinct behavior is the behavior we born with such as moving. Learned behavior is the behavior we need to learn to combine different basic moves such as patrolling.</li>
+						<li>Event: Events happen in the environment </li>
+					</ul>
+				</p>			
+			
+					 
+				<p class="normal indent">	 
+					
+					The Enemy folder is the models and prefabs of NPC, Scene is created to test the AI. 
+					AIFolderCreate is a simple folder-create application, it can create folders automately. 
+					As for the GameSet, it's some specific codes for the game. 
+				</p>
+			
+				<!-- <h3>Dialogue System</h3>
+			<img width="500" class="center" alt="DialogueData-image" src="../../images/Sword and Magic/DialogueData.jpg">
+
+				<p class="normal indent">
+						I created a dialogue system for this game, to manage missions and dialogues. 
+						With the power of ScriptableObject, it's easy to generate NPC dialogues. 
+						By dragging dialogue prefabs into another dialogue prefab, change the sequence of text is simple.
+				</p>
+		
+				<p class="normal indent">
+						I also Designed the UI of this game, here are UI pictures.
+				</p> -->
+				<h3>AICharacterBrain</h3>
+				<img width="600" class="center" alt="DialogueData-image" src="../../images/Unity AI/AICharacterBrain.jpg">
+
+				<p class="normal indent">
+						AICharacterBrain is one of the code files in the AI plugin. 
+						I take it just for an example of my code. 
+						It's the core of the AI system folded in the Determine to make decisions.
+				</p>
+				<img width="600" class="center" alt="DialogueData-image" src="../../images/Unity AI/Publics.jpg">
+
+				<p class="normal indent">
+						Region Public is variables which are public 
+
+				</p>	<img width="600" class="center" alt="DialogueData-image" src="../../images/Unity AI/Privates.jpg">
+
+				<p class="normal indent">
+						Region Private is variables which are private
+				</p>	<img width="600" class="center" alt="DialogueData-image" src="../../images/Unity AI/InitializeData.jpg">
+
+				<p class="normal indent">
+						Region Initialize is to initialize different data to the brain
+				</p>	<img width="600" class="center" alt="DialogueData-image" src="../../images/Unity AI/Update.jpg">
+
+				<p class="normal indent">
+						The Update method is to make decisions when time's up NPC will detect the environment and judge if it needs to make decisions. 
+						If it needs to make a decision, then call change decision
+				</p>
+				<p class="normal indent">	For more details about the code, you can jump to <a href="https://github.com/zheminggu/Game-AI">my Github</a>. </p>
+		</div>
+
+		<div class="row">
+			<a class="button button-primary pull-right " href="../../index.html">Back Home ></a>
+		</div>		
+		
+   	</section>		
+   
+   </div> <!-- /main-content-wrap -->
+
+
+   <!-- footer
+	================================================== -->
+	<footer id="main-footer">
+
+			
+	 
+			<div class="footer-info-wrap">
+	 
+				<div class="row footer-info">
+	 
+					   <div class="col-four tab-full">
+						   <h4><i class="icon-location-map-1"></i> Where to Find Me</h4>
+	 
+						   <p>
+					  The People's Bank of China<br>
+					  No.331, Fuhui road, Gucheng district<br>
+					  Lijiang city, Yunnan province, China 674100
+					  </p>
+					   </div>
+	 
+					<div class="col-four tab-full collapse">
+						<h4><i class="icon-phone-incoming"></i> Get In Touch</h4>
+	 
+						<p>zheminggugu@gmail.com<br>
+							Wechat: gzm1637120736 <br>
+							Phone: (+86) 18811378006			     
+						</p>
+					</div>
+	 
+					<div class="col-four tab-full">
+						<h4><i class="icon-organization-hierarchy-3"></i> Recommonders</h4>
+	 
+						<ul class="footer-link-list">
+							<li><a href="#">Gangyi Ding</a></li>
+							<li><a href="#">Hongsong Li</a></li>
+							<li><a href="#">Li Lin</a></li>
+						</ul>
+					</div>
+						
+				   </div>
+			</div> <!-- /footer-info-wrap -->
+				
+			<div class="footer-bottom"> 
+	 
+				<div class="copyright">
+					  <span>This website is just for study use.</span> 
+					  <span>Templete design by <a href="#">Elevate</a></span>	         	
+				</div>  		
+			</div>
+				
+		</footer>   
+
+   <div id="go-top">
+		<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+	</div>
+
+   <!-- preloader
+   ================================================== -->
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="../../js/jquery-2.1.3.min.js"></script>
+   <script src="../../js/plugins.js"></script>
+   <script src="../../js/main.js"></script>
+
+</body>
+
+</html>

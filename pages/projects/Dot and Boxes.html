@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Gu's Dot and Boxes</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="../../css/base.css"> 
+   <link rel="stylesheet" href="../../css/vendor.css"> 
+   <link rel="stylesheet" href="../../css/main.css"> 
+
+   <style type="text/css" media="screen">
+   	#styles { 
+   		background: white;
+   		padding-top: 12rem;
+   		padding-bottom: 12rem;
+   	}      	
+   </style>    
+
+   <!-- script
+   ================================================== -->
+	<script src="../../js/modernizr.js"></script>
+	<script src="../../js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="../../favicon.png">
+
+</head>
+
+<body id="top" >
+	
+	<!-- header 
+   ================================================== -->
+   <header class="main-header">
+   	
+   	<div class="logo">
+	      <a href="../../index.html">Elevate</a>
+	   </div> 
+
+	   <a class="menu-toggle" href="#"><span>Menu</span></a>   	
+
+   </header>
+
+   <!-- main navigation 
+   ================================================== -->
+   <nav id="menu-nav-wrap">
+		<h3>Navigation</h3>   	
+		<ul class="nav-list">
+			<li><a href="../../index.html" title="">Home</a></li>
+			<li><a href="#" title="">Dot and Boxes</a></li>
+			<li><a href="Sword and Magic.html" title="">Sword and Magic</a></li>
+			<li><a href="Unity AI.html" title="">Unity AI</a></li>
+			<li><a href="SCO Light Simulation.html" title="">SCO Light Simulation</a></li>					
+			<li><a href="Nanchang Virtual Character.html" title="">Virtual Character</a></li>	
+			<li><a href="My Artworks.html" title="">My Artworks</a></li>	
+		
+		</ul>
+	</nav> <!-- /menu-nav-wrap -->
+
+
+	<!-- main content wrap
+   ================================================== -->
+   <div id="main-content-wrap">
+
+
+		<!-- main content wrap
+   	================================================== -->
+   	<section id="intro">
+
+		   <!-- <div class="shadow-overlay"></div> -->
+		   
+		   <div class="row intro-content">
+		   	<div class="col-twelve">
+
+		   		<h3 class="animate-intro">Zheming Gu</h3>
+			  		
+					<h1 class="animate-intro">
+						Discovering basic game theory	
+					</h1>	
+					<h1><br></h1>
+					
+
+			  	</div> 		   			
+		   </div>    
+
+		</section> 
+
+
+
+		<!-- styles
+   	================================================== -->
+   	<section id="styles">
+		 
+		<div class="row add-bottom text-center">
+			<div class="col-twelve tab-full">
+				<h1>My Dot and Boxes</h1>
+				<p class="lead">This project is an AI of Dot and Boxes, which consists of two parts: user interface (UI) and game engine. The game engine based on Monte Carlo Tree Search (MCTS) is designed by myself. The UI realized with WPS framework using C#. </p>
+			</div>
+		</div>
+	
+		<div class="row ">
+				
+			<div class="col-twelve tab-full">
+				<h2>Dot and Boxes</h2>
+				
+				<h3>Rules of Dot and Boxes</h3>
+				<aside class="pull-quote">
+					<blockquote>
+							<img class="pull-right" alt="example-image" src="../../images/Dot and Boxes/example.jpg">
+							<p>
+								Starting with an empty grid of dots, two players take turns adding a single horizontal or vertical line between two unjoined adjacent dots.
+								 The player who completes the fourth side of a 1×1 box earns one point and takes another turn. 
+								 (A point is typically recorded by placing a mark that identifies the player in the box, such as an initial.) The game ends when no more lines can be placed. 
+								 The winner is the player with the most points. The board may be of any size.
+							</p>
+							<cite>
+								<a href="https://en.wikipedia.org/wiki/Dots_and_Boxes"> Dots and Boxes Wikipedia</a>
+							</cite>
+					</blockquote>
+				</aside>	
+				<h3>About this project</h3>
+				<img width="480"  class="pull-right" alt="ui-image" src="../../images/Dot and Boxes/UI.jpg">
+				<p class="normal indent">	To download the project, hit the <a href="https://drive.google.com/file/d/1Fdyp2E-6a0dBXJsxUXEwTt2Rk5tRM8Ak/view?usp=sharing">Link here</a>, I've put it on my Google Drive.</p>
+			<p class="normal indent">To play this game, you should also <a href="https://drive.google.com/file/d/1bz1DJwjRIiYdGPQVVTptbt6bcjsmC5jc/view?usp=sharing">download the UI</a></p>
+				<p class="normal indent">	For more details of the code, you can jump to <a href="https://github.com/zheminggu/Dot-and-Box-Chess">my Github</a>. </p>
+				<p class="normal indent">
+					To run this project, you should go to the UI folder then run the DotsAndBoxesUI.exe. If it works well, you shall see the User interface. 
+					In this project, the board size is 5X5. On the start of a Dot and Boxes, the blue side is always the first hand. 
+					The UI will count points and time automatically. 
+				</p>
+				<p class="normal indent">	
+					The load Engine button on the right is to load the game engine, the core of this project. 
+					The game engine can be found in ../Project1/Release/Project1.exe
+					After load successfully, you can click on the New Game button to start a new game with the computer. 
+					To stop the game, hit the Stop Game button on the left side. 
+					If you want to play with other players, you can Unlead Engine, start a new game without game engine loaded. 
+					The white block on the UI is Information of each action which is designed to debug the game engine.
+				</p>
+			</div>
+			
+			<div class="col-ten tab-full">
+				
+			</div>
+		</div>
+
+		<div class="row add-bottom">
+		
+			<div class="col-twelve tab-full">
+			<h2>Game Engine</h2>
+			 <p class="normal indent">I created the game engine in the game theory lab's summer training. 
+				It was accomplished using C++ with the power of Visual Studio. 
+				During the training, I studied some basic algorithm of Game theory, including MinMax, Alpha Beta and Monte Carlo Tree (MCT). 
+				With the knowledge I've learned, I designed this Dot and Box game engine with MCT search optimized by UCT. </p>
+				<img width="500" alt="UCTSearch-image" src="../../images/Dot and Boxes/UCTSearch.jpg">
+				<img width="500" alt="UCTSearch-image" src="../../images/Dot and Boxes/AlphaBeta.jpg">
+			<p class="normal indent">	
+				At first, I want to combine MCTS and Alpha Beta to enhance the prediction ability of the game engine.  
+				In my view, MCT can simulate widely, so applying it at the beginning would prevent Alpha Beta to exclude valid action mistakenly. 
+				However, in practice, this thought didn't perform well. 
+				So I commented out the Alpha Beta part, just using MCT to meet the request of time control.</p>
+				<img width="800" class="center" alt="chesscode-image" src="../../images/Dot and Boxes/ChessCode.jpg">
+
+			<p class="normal indent">	
+				The source code locates in Project1/Project1. UCTEngine and UCTsearch are MCT part. 
+				Evaluate, Moves and Search are Alpha Beta part. 
+				Due to I commented out the Alpha Beta, the Search function in Search.cpp is serving for MCT search. 
+				Main.cpp runs the game engine, and judge the legal action to be move. 
+				For more detailed information about the code, please jump to<a href="https://github.com/zheminggu/Dot-and-Box-Chess"> my Github</a>.</p>
+				<img class="center" alt="chesswin-image" src="../../images/Dot and Boxes/Chesswin.jpg">
+
+			<p class="normal indent">
+				
+				At the end of the summer training, I finished this AI engine. 
+				I also achieved another Surakarta chess AI with my teammates. 
+				We attended the 2017 Liang Jiang new area Chongqing University of Technology Cup national game theory competition. 
+				The Dot and Boxes win the third prize. The Surakarta win the first prize and the silver medal of this competition. 
+				The Dot and Box is the first chess AI made by myself. So I posted it here. </p>
+			</div>
+		</div>
+
+		<div class="row">
+			<a class="button button-primary pull-right " href="../../index.html">Back Home ></a>
+		</div>		
+		
+   	</section>		
+   
+   </div> <!-- /main-content-wrap -->
+
+
+   <!-- footer
+	================================================== -->
+	<footer id="main-footer">
+
+		
+	 
+			<div class="footer-info-wrap">
+	 
+				<div class="row footer-info">
+	 
+					   <div class="col-four tab-full">
+						   <h4><i class="icon-location-map-1"></i> Where to Find Me</h4>
+	 
+						   <p>
+					  The People's Bank of China<br>
+					  No.331, Fuhui road, Gucheng district<br>
+					  Lijiang city, Yunnan province, China 674100
+					  </p>
+					   </div>
+	 
+					<div class="col-four tab-full collapse">
+						<h4><i class="icon-phone-incoming"></i> Get In Touch</h4>
+	 
+						<p>zheminggugu@gmail.com<br>
+							Wechat: gzm1637120736 <br>
+							Phone: (+86) 18811378006			     
+						</p>
+					</div>
+	 
+					<div class="col-four tab-full">
+						<h4><i class="icon-organization-hierarchy-3"></i> Recommonders</h4>
+	 
+						<ul class="footer-link-list">
+							<li><a href="#">Gangyi Ding</a></li>
+							<li><a href="#">Hongsong Li</a></li>
+							<li><a href="#">Li Lin</a></li>
+						</ul>
+					</div>
+						
+				   </div>
+			</div> <!-- /footer-info-wrap -->
+				
+			<div class="footer-bottom"> 
+	 
+				<div class="copyright">
+					  <span>This website is just for study use.</span> 
+					  <span>Templete design by <a href="#">Elevate</a></span>	         	
+				</div>  		
+			</div>
+				
+		</footer>   
+
+   <div id="go-top">
+		<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+	</div>
+
+   <!-- preloader
+   ================================================== -->
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="../../js/jquery-2.1.3.min.js"></script>
+   <script src="../../js/plugins.js"></script>
+   <script src="../../js/main.js"></script>
+
+</body>
+
+</html>

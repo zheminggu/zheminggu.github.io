@@ -1,335 +1,477 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-    <meta name="author" content="">
-	  
-	
-    <link rel="icon" href="zheminggu_icon.ico">
-	<title>Zheming Gu's Home</title>
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
 
-	  <!-- Bootstrap CSS -->
-   <link href="css/bootstrap.min.css" rel="stylesheet">
-	
-	 <link href="css/style.css" rel="stylesheet">
-	  
-	 <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
-  
-  </head>
-	
-  <body>
-	<nav class="navbar navbar-default">
-    <div class="container-fluid">
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Gu's Home</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a>
-                </li>
-                <li><a href="#">Link</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a>
-                        </li>
-                        <li><a href="#">Another action</a>
-                        </li>
-                        <li><a href="#">Something else here</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a>
-                        </li>
-                        <li><a href="#">Another action</a>
-                        </li>
-                        <li><a href="#">Something else here</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
-	<!--header-->
-	<div class = "break">
-	  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-<!--
-		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
--->
-		  <a class="navbar-brand" href="#">Zheming Gu</a>
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-			  <li class="nav-item">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			  </li>
-				<li class="nav-item dropdown active">
-				<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown01">
-				  <a class="dropdown-item" href="#">Action</a>
-				  <a class="dropdown-item" href="#">Another action</a>
-				  <a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			  </li>
-				<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown01">
-				  <a class="dropdown-item" href="#">Action</a>
-				  <a class="dropdown-item" href="#">Another action</a>
-				  <a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">About Me</a>
-			  </li>
-			 
-			</ul>
-		  </div>
-    </nav>
-	  </div>
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css"> 
+   <link rel="stylesheet" href="css/vendor.css"> 
+   <link rel="stylesheet" href="css/main.css">    
+
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header class="main-header">
+   	
+   	<div class="logo">
+	      <a href="index.html">Zheming Gu</a>
+	   </div> 
+
+	   <a class="menu-toggle" href="#"><span>Menu</span></a>   	
+
+   </header>
+
+   <!-- main navigation 
+   ================================================== -->
+   <nav id="menu-nav-wrap">
+
+   	<h3>Navigation</h3>   	
+		<ul class="nav-list">
+			<li><a class="smoothscroll" href="#intro" title="">Home</a></li>
+			<li><a class="smoothscroll" href="#testimonials" title="">About Me</a></li>
+
+			<li><a class="smoothscroll" href="#infos" title="">Projects</a></li>
+			<li><a class="smoothscroll" href="#features" title="">Articles</a></li>
+			<li><a class="smoothscroll" href="#main-footer" title="">Contact Me</a></li>
 	
-	  	
-	<!--content-->
-	<div class = "container-fluid">
-		<div class="row">
-			<!--nav bar-->
-			<div class="col line-right">
-				<div class="before-after">
-				<nav>
-				<ul class="mcd-menu flex-column">
-					<li>
-						<a href="">
-							<i class="fas fa-robot"></i>
-							<strong>ML</strong>
-							<small>machine learning</small>
-						</a>
-					</li>
-					<li>
-						<a href="" >
-							<i class="fa fa-edit"></i>
-							<strong>Game</strong>
-							<small>game development</small>
-						</a>
-					</li>
+		</ul>
 
-					<li>
-						<a href="" class="active">
-							<i class="fa fa-comments-o"></i>
-							<strong>Steam</strong>
-							<small>game mod?</small>
-						</a>
-						<ul>
-							<li><a href="#"><i class="fa fa-globe"></i>Mission</a></li>
-							<li>
-								<a href="#"><i class="fa fa-group"></i>Our Team</a>
-								<ul>
-									<li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>
-									<li>
-										<a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>
-										<ul>
-											<li><a href="#"><i class="fa fa-leaf"></i>About</a></li>
-											<li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>
-										</ul>
-									</li>
-									<li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
-								</ul>
-							</li>
-							<li><a href="#"><i class="fa fa-trophy"></i>Rewards</a></li>
-							<li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="">
-							<i class="fa fa-picture-o"></i>
-							<strong>Tips</strong>
-							<small>some tips</small>
-						</a>
-					</li>
+
+	</nav> 
+
+
+	<!-- main content wrap
+   ================================================== -->
+   <div id="main-content-wrap">
+
+
+		<!-- main content wrap
+   	================================================== -->
+   	<section id="intro">
+
+		   <!-- <div class="shadow-overlay"></div> -->
+		   
+		   <div class="row intro-content">
+		   	<div class="col-twelve">
+
+		   		<h3 class="animate-intro">Zheming Gu</h3>
+			  		
+					<h1 class="animate-intro">
+						Create vivid NPC to the world
+					</h1>	
 					
+					<div class="buttons">
+						<a class="button stroke smoothscroll animate-intro" href="#infos" title="">Projects</a>
+						<a class="button stroke smoothscroll animate-intro" href="#features" title="">Articles</a>
+					</div>					
 
-				</ul>
-				</nav>
-		</div>
-			</div>
-			
-			<!--content-->
-		 	<div class="col-8 markdown-body">
-			 
-				<h1>Useful information</h1>
+					<img src="images/AboutMe.jpg" alt="" class="animate-intro">   			
 
-				<h2 id="Character">Character </h2>
-				
-				<p class="acdemic-indent">	All the characters are listed in the prefab file, here is some information about original characters in the game.According to the character name we can find the scripts in prefab file. (still lack some characters)</p>
-				<h3 id="Character List">Character List</h3>
-				<!--paragraph with figure left-->
+			  	</div> <!-- /twelve --> 		   			
+		   </div> <!-- /row -->   
 
-				 <div class="row">
-					<div class= "col line-right line-bottom">
-						<figure class="figure">
-							<img src="images/blog/steam/DontStarveMod/wilson.jpg" alt="image of wilson">
-							<figcaption class="figure-caption">Image of wilson.</figcaption>
-						 </figure>
+		</section> <!-- /intro -->
+
+
+	
+		<section id="testimonials">
+				<div class="row testimonial-content">
+					<div class="col-six">
+					<img src="images/Me.jpg" alt="" class="animate-intro">   			
+
 					</div>
-					<div class= "col-10 line-bottom">
-						<p><strong>wilson:</strong> <br>The gentleman Scientist(most common one in the game)</p>
-					</div>				
-				</div>
-
-				 <div class="row">
-					<div class= "col line-right line-bottom">
-						<figure class="figure">
-							<img src="images/blog/steam/DontStarveMod/Willow.png" alt="image of willow">
-							<figcaption class="figure-caption">Image of willow.</figcaption>
-						 </figure>
-					</div>
-					<div class= "col-10 line-bottom">
-						<strong>willow:</strong> The Firestarter (fire woman)<br>
-					</div>				
-				</div>
-
-				   <div class="row">
-					<div class= "col line-right line-bottom">
-						<figure class="figure">
-							<img src="images/blog/steam/DontStarveMod/Wolfgang.png" alt="image of Wolfgang">
-							<figcaption class="figure-caption">Image of Wolfgang.</figcaption>
-						 </figure>
-					</div>
-					<div class= "col-10 line-bottom">
-						<strong>Wolfgang:</strong> The strong man (change state in different hunger value)<br>
-					</div>				
-				</div>
-
-				   <div class="row">
-					<div class= "col line-right line-bottom">
-						<figure class="figure">
-							<img src="images/blog/steam/DontStarveMod/Wendy.png" alt="image of Wendy">
-							<figcaption class="figure-caption">Image of Wendy.</figcaption>
-						 </figure>
-					</div>
-					<div class= "col-10 line-bottom">
-						<strong>Wendy:</strong> The Bereaved (feels comfortable in the dark)<br>
-					</div>				
-				</div>
-
-				  <div class="row">
-					<div class= "col line-right line-bottom" >
-						<figure class="figure">
-							<img src="images/blog/steam/DontStarveMod/Wx78.png" alt="image of WX78">
-							<figcaption class="figure-caption">Image of WX78.</figcaption>
-						 </figure>
-					</div>
-					<div class= "col-10 line-bottom">
-						 <strong>WX78:</strong> the soulless automaton (Robot in the game)<br>
-					</div>				
-				</div>
-				   <div class="row">
-					<div class= "col line-right line-bottom">
-						<figure class="figure">
-							<img src="images/blog/steam/DontStarveMod/Wagstaff.png" alt="image of Wagstaff">
-							<figcaption class="figure-caption">Image of Wagstaff.</figcaption>
-						 </figure>
-					</div>
-					<div class= "col-10 line-bottom">
-						 <strong>Wagstaff:</strong> the cryptic founder (great inventor) <br>
-					</div>				
-				</div>
-
-				  <h3 id="Useful prefabs">Useful prefabs</h3>
-					<p><strong>wolfgang:</strong> change character animation(how the character look like) when the hunger value is different<br>
-						<strong>willow:</strong> fire around while working</p>  
-
-				 <h2 id="Events">Events </h2>
-					<p>The events fires when game environment changing</p>
-					<h3 id="Time">Time </h3> 
-					<p>daytime: on day time<br>dusktime: on dusk time<br>nighttime: on night time</p>
-					<h3 id="Hunger">Hunger</h3>
-					<p> hungerdelta: on character hunger value changed</p>
-					<br>
-
-			</div>
-			
-			<!--spy navigator-->
-			<div class="col">
-				<div class="line-left blog-content-nav">
-					<nav class="navbar navbar-light bg-light">
-					  <nav class="nav nav-pills flex-column">
-						<a class="" href="#Ch qaracter">Character</a>
-						<nav class="nav nav-pills flex-column">
-							<a class=" ml-3 my-1" href="#Character List">Character List</a>
-							<a class=" ml-3 my-1" href="#Useful prefabs">Useful prefabs</a>
-<!--
-								<nav class="nav nav-pills flex-column">
-								<a class=" ml-5 my-1" href="#">item</a>
-								<a class=" ml-5 my-1" href="#">item</a>
-								</nav>
--->
-						</nav>
-						<a class="" href="#Events">Events</a>
-						<nav class="nav nav-pills flex-column">
-						  <a class=" ml-3 my-1" href="#Time">Time</a>
-						  <a class=" ml-3 my-1" href="#Hunger">Hunger</a>
-						</nav>
-					  </nav>
-					</nav>
-				</div>
-			</div>
-		</div>	 
-	 </div>
-	  
-<!--	  scroll up-->
-	<div class="scrollup">
-			<a href="#"><i class="fa fa-chevron-up"></i></a>
-		</div>
-	  
-<!--	  footer-->
-<!--
-   <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
-      </div>
-   	 </footer>
--->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	 <script src="js/jquert-3.4.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="js/main.js"></script>
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+					<div class="col-six">
 	 
-  </body>
+						<h2 class="h01 animate-this">
+					   I'm a student focusing on game programming and game AI development
+					</h2>
+	 
+						 <div id="testimonial-slider" class="flexslider animate-this">
+							 <ul class="slides">	
+								<li>
+									   <p>&ldquo;With programming skills of C, C++, C#, Java, JavaScript, html, python, I have the basic ability to build a game.  &rdquo;</p>
+									   <p class="author-info">&mdash; (￣▽￣)╭</p>
+								 </li>						
+								 <li>
+									 <p>&ldquo;With the power of Unity and Unreal, creating interesting games  becomes fun and simple.&rdquo;</p>
+									 <p class="author-info">&mdash; o(*￣▽￣*)o</p>
+								 </li>	
+								 <li>
+									<p>&ldquo;With applications like SAI, Photoshop, Premiere, Aftereffects, I can become an amateur artist and beautify the game content.&rdquo;</p>
+									<p class="author-info">&mdash; (￣▽￣)"</p>
+							  </li>					
+								 <li>
+									   <p>&ldquo;With the zeal of building AI creatures, I would create vivid none player characters in the future.&rdquo;</p>
+									   <p class="author-info">&mdash; O(∩_∩)O</p>
+								 </li>
+							 </ul>
+						 </div>
+                    <div class="flexslider-controls animate-this">
+					   <ul class="flex-control-nav">
+					      <li></li>
+					      <li></li>
+					      <li></li>
+                           <li></li>
+					   </ul>
+					</div>
+						
+					</div>
+				</div>
+			</section> <!-- /testimonials -->
+
+		<!-- projects
+   	================================================== -->
+   	<section id="infos">
+			<div class="group animate-this add-top">	
+					<div class="with-bottom-line">
+						<h2 class="h2color" >Projects</h2>
+		 
+						<p class="lead">These are projects I attended, click on more info to see detailed information about each project.</p>
+		 
+					</div>   		
+				</div>
+		   
+   		<div class="info-entry">
+
+   			<div class="half-grey"></div>
+
+   			<div class="row info-entry-content">
+
+   				<div class="media-wrap">
+   					<div class="media animate-this"  data-animate="fadeInRight">
+   						<img src="images/Dot and Boxes/Dot and Boxes.jpg" alt="">
+   					</div>   				      				
+   				</div>
+
+   				<div class="col-six text-part">   				
+   					
+   					<h5 class="animate-this" data-animate="fadeInLeft">C++ Stuff</h5>
+   					<h2 class="animate-this" data-animate="fadeInLeft">Dot and Boxes</h2>
+
+   					<p class="animate-this" data-animate="fadeInLeft">The program consists of two parts: the game engine and the user interface (UI). The game engine selects actions by Monte Carlo Tree Search, optimized by UCT.  The UI receives predicted outputs from the game engine, then show the consequence to the player.</p>
+
+   					<a href="pages/projects/Dot and Boxes.html" class="button animate-this" data-animate="fadeInLeft">More Info</a>
+   			 					
+   				</div>   				
+   				
+   			</div> <!-- /info-entry-content -->
+
+   		</div> <!-- /info-entry -->
+
+   		<div class="info-entry">
+
+   			<div class="half-grey"></div>
+
+   			<div class="row info-entry-content">
+   			
+	            <div class="media-wrap">
+	            	<div class="media animate-this" data-animate="fadeInLeft">
+	            		<div class="fluid-video-wrapper">
+						<img src="images/Sword and Magic/Sword and Magic.jpg" alt="">
+
+		            </div>
+	            	</div>   				
+	   			</div>
+
+	   			<div class="col-six text-part">   				
+   					
+   					<h5 class="animate-this" data-animate="fadeInRight">Unity Stuff</h5>
+   					<h2 class="animate-this" data-animate="fadeInRight">Sword and Magic</h2>
+
+   					<p class="animate-this" data-animate="fadeInRight">The Sword and Magic game created by my team. In this game, I'm the team leader and the art director. It tells a story about the warrior challenge the boss of  Promised Land to defend his homeland.</p>
+
+   					<a href="pages/projects/Sword and Magic.html" class="button animate-this" data-animate="fadeInRight">More Info</a>
+   			 					
+   				</div>
+
+   			</div> <!-- /info-entry-content -->
+
+   		</div> <!-- /info-entry -->
+
+		<div class="info-entry">
+
+			<div class="half-grey"></div>
+
+			<div class="row info-entry-content">
+
+				<div class="media-wrap">
+					<div class="media animate-this"  data-animate="fadeInRight">
+						<img src="images/Unity AI/Unity AI.jpg" alt="">
+					</div>   				      				
+				</div>
+
+				<div class="col-six text-part">   				
+					
+					<h5 class="animate-this" data-animate="fadeInLeft">AI Stuff</h5>
+					<h2 class="animate-this" data-animate="fadeInLeft">Unity AI</h2>
+
+					<p class="animate-this" data-animate="fadeInLeft">This Unity AI project is created by myself. I designed the architecture of this project based on my understanding of NPC AI in games.  In this project, I used Unity engine API and coded with C#.</p>
+
+					<a href="pages/projects/Unity AI.html" class="button animate-this" data-animate="fadeInLeft">More Info</a>
+								 
+				</div>   				
+				
+			</div> <!-- /info-entry-content -->
+
+		</div> <!-- /info-entry -->
+
+		<div class="info-entry">
+
+			<div class="half-grey"></div>
+
+			<div class="row info-entry-content">
+			
+			 <div class="media-wrap">
+				 <div class="media animate-this" data-animate="fadeInLeft">
+					 <div class="fluid-video-wrapper">
+						<img src="images/SCO Light Simulation/SCO Light Simulation.jpg" alt="">
+
+				 </div>
+				 </div>   				
+				</div>
+
+				<div class="col-six text-part">   				
+					
+					<h5 class="animate-this" data-animate="fadeInRight">Unreal Stuff</h5>
+					<h2 class="animate-this" data-animate="fadeInRight">SCO Light Simulation</h2>
+
+					<p class="animate-this" data-animate="fadeInRight">It is an Unreal project. The main purpose of this project is to simulate the lighting show of Shanghai Cooperation Organization. I'm the leader of this project and built the lighting behavior system.</p>
+
+					<a href="pages/projects/SCO Light Simulation.html" class="button animate-this" data-animate="fadeInRight">More Info</a>
+								 
+				</div>
+
+			</div> <!-- /info-entry-content -->
+
+		</div> <!-- /info-entry -->
+
+		<div class="info-entry">
+
+			<div class="half-grey"></div>
+
+			<div class="row info-entry-content">
+
+				<div class="media-wrap">
+					<div class="media animate-this"  data-animate="fadeInRight">
+						<img src="images/Nanchang Virtual Character/Nanchang Virtual Character.jpg" alt="">
+					</div>   				      				
+				</div>
+
+				<div class="col-six text-part">   				
+					
+					<h5 class="animate-this" data-animate="fadeInLeft">Unreal Stuff</h5>
+					<h2 class="animate-this" data-animate="fadeInLeft">Nanchang Virtual Character</h2>
+
+					<p class="animate-this" data-animate="fadeInLeft">It is an Unreal project made with my teammate Yiyun Wang. The main purpose of this project is to build a real-time reacting character base on the quintessence of Chinese culture -- Sichuan Opera. My job in this project is building reacting systems such as face changing, camera controlling and light behaviors.</p>
+
+					<a href="pages/projects/Nanchang Virtual Character.html" class="button animate-this" data-animate="fadeInLeft">More Info</a>
+								 
+				</div>   				
+				
+			</div> <!-- /info-entry-content -->
+
+		</div> <!-- /info-entry -->
+
+		<div class="info-entry">
+
+			<div class="half-grey"></div>
+
+			<div class="row info-entry-content">
+			
+			 <div class="media-wrap">
+				 <div class="media animate-this" data-animate="fadeInLeft">
+					 <div class="fluid-video-wrapper">
+						<img src="images/Artworks/Artwork.jpg" alt="">
+
+				 </div>
+				 </div>   				
+				</div>
+
+				<div class="col-six text-part">   				
+					
+					<h5 class="animate-this" data-animate="fadeInRight">Art Stuff</h5>
+					<h2 class="animate-this" data-animate="fadeInRight">My Artworks</h2>
+
+					<p class="animate-this" data-animate="fadeInRight">These are some pictures painted by myself. I'm a fan of anime, so most of them are anime character pictures, however, as a programmer without professional training, pictures here are just amateur level.</p>
+
+					<a href="pages/projects/My Artworks.html" class="button animate-this" data-animate="fadeInRight">More Info</a>
+								 
+				</div>
+
+			</div> <!-- /info-entry-content -->
+
+		</div> <!-- /info-entry -->
+   	</section> <!-- infos -->
+
+
+
+	<!-- Articles
+   	================================================== -->
+	   <section id="features">
+
+		<div class="row section-intro group animate-this">	
+		   <div class="col-twelve with-bottom-line">
+
+			   <h2 class="" >Articles You'll Love.</h2>
+
+			   <p class="lead">These articles are written by myself, adapt to different needs of the admission. For more details, you can click on the title of each passage.</p>
+
+		   </div>   		
+	   </div>
+
+		<div class="row features-wrap">
+							 
+			<div class="features-list block-1-3 block-s-1-2 block-tab-full">
+
+				<div class="bgrid feature animate-this">	
+
+					<span class="feature-count">01.</span>            
+
+				   <div class="feature-content">
+
+					 <a href="pages/articles/Statement of purpose.html"><h3>Statement of purpose</h3></a>
+
+						<p>My career goal is to be a Computer Game programmer. In order to create a more reliable and fancier world for computer game players, lead them to somewhere over the rainbow, I am eager to deepen my knowledge and skills in the Computer Science, and finally combine my knowledge with the game industry. That is why I am here to apply for your Computer Science graduate program, taking a further step to achieve my career goal.
+					   </p>
+									 
+					</div> 	         	 
+
+				</div>
+
+				<div class="bgrid feature animate-this">	
+
+					<span class="feature-count">02.</span>            
+
+				   <div class="feature-content">
+
+					 <a href="pages/articles/Writting Sample.html"><h3>Writting Sample</h3></a>
+
+						<p>With much more actions chosen than Go, the artificial intelligence for Real-time strategy games are considered as the most challenging work today. In this article, basic knowledge of machine learning is mentioned and possible ways to design artificial intelligence for real-time strategy games are discussed.
+					   </p>
+									 
+					</div> 	         	 
+
+				</div> 
+
+				<div class="bgrid feature animate-this">	
+
+					<span class="feature-count">03.</span>            
+
+				   <div class="feature-content">
+
+					<a href="pages/articles/Video Speech.html"> <h3>Video Speech</h3></a>
+
+						<p>With the dream of building AI, I majored in Software Engineering after high school, to learn the fundamental skills of coding and designing of basic software. I joined the Embed System Lab. I finished a "Library Intelligent Book Picking Machine" and won the third prize of Creative Design Competition of the North China University Student Robot Competition.
+					   </p>
+									 
+					</div> 	         	 
+
+				</div> 
+
+
+
+			</div> <!-- /features-list --> 				
+
+		</div>
+		<!-- /features-wrap -->
+		
+	</section> <!-- /features -->
+
+	
+
+   <!-- footer
+	================================================== -->
+	<footer id="main-footer">
+
+
+	   <div class="footer-info-wrap">
+
+	   	<div class="row footer-info">
+
+		  		<div class="col-four tab-full">
+		  			<h4><i class="icon-location-map-1"></i> Where to Find Me</h4>
+
+		  			<p>
+				 The People's Bank of China<br>
+		         No.331, Fuhui road, Gucheng district<br>
+		         Lijiang city, Yunnan province, China 674100
+		         </p>
+		  		</div>
+
+		   	<div class="col-four tab-full collapse">
+	   			<h4><i class="icon-phone-incoming"></i> Get In Touch</h4>
+
+	   			<p>zheminggugu@gmail.com<br>
+				   	Wechat: gzm1637120736 <br>
+				   	Phone: (+86) 18811378006			     
+				   </p>
+	   		</div>
+
+	   		<div class="col-four tab-full">
+	   			<h4><i class="icon-organization-hierarchy-3"></i> Recommonders</h4>
+
+				   <ul class="footer-link-list">
+				   	<li><a href="#">Gangyi Ding</a></li>
+				   	<li><a href="#">Hongsong Li</a></li>
+				   	<li><a href="#">Li Lin</a></li>
+				   </ul>
+	   		</div>
+		   		
+		  	</div>
+	   </div> <!-- /footer-info-wrap -->
+	   	
+	   <div class="footer-bottom"> 
+
+	   	<div class="copyright">
+		     	<span>This website is just for study use.</span> 
+				 <span>Templete design by <a href="#">Elevate</a></span>	         	
+		   </div>  		
+   	</div>
+	   	
+   </footer>   
+
+   <div id="go-top">
+		<a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+	</div>
+
+   <!-- preloader
+   ================================================== -->
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="js/jquery-2.1.3.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+
 </html>
