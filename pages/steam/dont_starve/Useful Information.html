@@ -17,61 +17,12 @@
 	<link href="../../../css/style.css" rel="stylesheet">
 	<link  href="../../../myheadertemplete.html" rel="import">
 	<script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
-  	
+  	 
   </head>
 	
   <body>
-  <script>
-    var link = document.querySelector('link[rel="import"]');
-	  console.log("link is " + link);
-	  console.log("link of import "+link.import);
-    var content = link.import;
-	  console.log(content);
-    // Grab DOM from warning.html's document.
-	 var my_header = content.querySelector('.break');
-//	  console.log(my_header)
-	  console.log(my_header);
-    document.body.appendChild(my_header.cloneNode(true));
-  </script>
-	  
 	<!--header-->
-<!--
-	<div class = "break">
-	  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-
-		  <a class="navbar-brand" href="#">Zheming Gu</a>
-
-		  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-			  <li class="nav-item">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			  </li>
-				<li class="nav-item dropdown active">
-				<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown01">
-				  <a class="dropdown-item" href="#">Machine Learning</a>
-				  <a class="dropdown-item" href="#">Game development</a>
-				  <a class="dropdown-item" href="#">Steam Mod</a>
-				  <a class="dropdown-item" href="#">Steam Mod</a>
-				</div>
-			  </li>
-				<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown01">
-				  <a class="dropdown-item" href="#">Action</a>
-				  <a class="dropdown-item" href="#">Another action</a>
-				  <a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">About Me</a>
-			  </li>
-			 
-			</ul>
-		  </div>
-    </nav>
-	  </div>
--->
+	  <div id ="header"></div>
 	  	
 	<!--content-->
 	<div class = "container-fluid">
@@ -284,6 +235,10 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="../../../js/main.js"></script>
     <script src="../../../js/ie10-viewport-bug-workaround.js"></script>
-	 
+	 <script> 
+    $(function(){
+      $("#header").load("../../../myheadertemplete.html"); 
+    });
+    </script> 
   </body>
 </html>
