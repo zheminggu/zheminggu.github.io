@@ -24,10 +24,11 @@
   <script>
     var link = document.querySelector('link[rel="import"]');
     var content = link.import;
-
+	  console.log(content);
     // Grab DOM from warning.html's document.
 	 var my_header = content.querySelector('.break');
 //	  console.log(my_header)
+	  console.log(my_header);
     document.body.appendChild(my_header.cloneNode(true));
   </script>
 	  
