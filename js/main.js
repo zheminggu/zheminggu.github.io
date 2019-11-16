@@ -275,48 +275,7 @@
 	/* ------------------------------------------------------
 	* Animations
 	* ------------------------------------------------------ */
-	if (!$("html").hasClass('no-cssanimations')) {
-
-		$('.animate-this').waypoint({
-
-			handler: function(direction) {
-
-				var defAnimationEfx = "fadeInUp";
-
-				if ( direction === 'down' && !$(this.element).hasClass('animated')) {
-
-					$(this.element).addClass('item-animate');
-
-					setTimeout(function() {
-
-						$('body .animate-this.item-animate').each(function(ctr) {
-
-							var el = $(this),
-		                  animationEfx = el.data('animate');
-
-		               if (animationEfx === null || animationEfx === undefined || animationEfx.trim() === "") {
-		                 	animationEfx = defAnimationEfx;
-		               }
-
-		              	setTimeout( function () {
-								el.addClass(animationEfx + ' animated');
-								el.removeClass('item-animate');
-							}, ctr * 50);
-
-						});
-							
-					}, 500);
-
-				}
-
-				// trigger once only
-       		this.destroy();  
-
-			}, 
-			offset: '95%'
-
-		}); 
-	} 
+	
 
   /* ------------------------------------------------------
 	* Back to Top
