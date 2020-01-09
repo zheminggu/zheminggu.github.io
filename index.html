@@ -9,7 +9,8 @@
 	
     <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
 	<title>Zheming Home</title>
- 	<link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
+	 <link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
+	 <link href="https://zheminggu.com/myheadertemplete.html" rel="import">
 	  <!-- Bootstrap CSS -->
   	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
@@ -217,7 +218,7 @@
 								
 								<p>These are some useful information for develop don't starve mods. Including list of characters and list of events </p>
 
-								<button onclick="location.href='pages/projects/SCO Light Simulation.html'" class="btn btn-outline-primary" >Show More</button>
+								<button onclick="location.href='pages/blogs/steam/dont_starve/Useful Information.html'" class="btn btn-outline-primary" >Show More</button>
 							</div>
 						</div> 
 					
@@ -294,11 +295,21 @@
 	<script> 
     $(document).ready(function(){
 		// add reuseable header
-		$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		try{
+			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
+			var content = link.querySelector('#header');
+			var active_el = link.querySelector('#Home');
+			active_el.classList.add('active');
+			document.querySelector('#header').appendChild(content.cloneNode(true));
+			
+		}catch(e){
+			console.log(e);
+		    $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+	 	}
 		
 		// add reuseable navbar
 // 		try{
-// 			var link = document.querySelector('link[rel="import"]').import; 
+// 			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
 // //			console.log(link);
 // 			var content = link.querySelector('#navbar');
 // //			console.log("content is " + content);
