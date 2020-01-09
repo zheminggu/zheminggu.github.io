@@ -9,7 +9,9 @@
 	
     <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
 	<title>Zheming Home</title>
- 	<link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
+	 <link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
+	 <link href="https://zheminggu.com/myheadertemplete.html" rel="import">
+	 
 	  <!-- Bootstrap CSS -->
   	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
@@ -114,8 +116,18 @@
     <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
 	<script> 
     $(document).ready(function(){
-		// add reuseable header
-		$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+			// add reuseable header
+			try{
+			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
+			var content = link.querySelector('#header');
+			var active_el = link.querySelector('#HeaderBlogs');
+			active_el.classList.add('active');
+			document.querySelector('#header').appendChild(content.cloneNode(true));
+			
+		}catch(e){
+			console.log(e);
+		    $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+	 	}
 		
 		// add reuseable navbar
 // 		try{

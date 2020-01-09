@@ -22,14 +22,7 @@ jQuery(document).ready(function ($) {
 	$('.smoothscroll').on('click', function (e) {
 		e.preventDefault();
 		var target = this.hash, $target = $(target);
-		$('html, body').stop().animate({'scrollTop': $target.offset().top},600, 'swing').promise().done(function () {
-			// check if menu is open
-			if ($('body').hasClass('menu-is-open')) 
-			{
-				$('.menu-toggle').trigger('click');
-			}
-			window.location.hash = target;
-		  });
+		$('html, body').stop().animate({'scrollTop': $target.offset().top-75},600, 'swing');
 	});
 	
 	/* ------------------------------------------------------
