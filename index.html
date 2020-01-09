@@ -298,7 +298,7 @@
 		try{
 			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
 			var content = link.querySelector('#header');
-			var active_el = link.querySelector('#Home');
+			var active_el = link.querySelector('#HeaderHome');
 			active_el.classList.add('active');
 			document.querySelector('#header').appendChild(content.cloneNode(true));
 			
