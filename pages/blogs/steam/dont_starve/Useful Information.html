@@ -10,6 +10,7 @@
     <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
 	<title>Dont starve\Useful information</title>
  	<link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
+ 	<link href="https://zheminggu.com/myheadertemplete.html" rel="importheader">
 	  <!-- Bootstrap CSS -->
   	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
@@ -178,7 +179,16 @@
 	<script> 
     $(document).ready(function(){
 		// add reuseable header
-		$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		try{
+			var link = document.querySelector('link[rel="importheader"]').import; 
+			var content = link.querySelector('#header');
+			var active_el = link.querySelector('#Blogs');
+			active_el.classList.add('active');
+			document.querySelector('#header').appendChild(content.cloneNode(true));
+			
+		}catch(e){
+		    $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+	 	}
 		
 		// add reuseable navbar
 		try{
