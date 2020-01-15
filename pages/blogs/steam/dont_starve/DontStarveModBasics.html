@@ -1,0 +1,106 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+    <meta name="author" content="">  
+	
+    <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
+	  <title>Desktop\DontStarveModBasics</title>
+    <link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
+     
+	  <!-- Bootstrap CSS -->
+  	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
+</head> 
+
+<body>
+	<!--header--> 
+	<div id ="header"></div>
+
+	<!--content-->
+	<div class="container-fluid">
+		<div class="row">
+			<!--navbar-->
+			<div id = "navbar"></div>
+
+			<div class="col-8 markdown-body">
+				<h1>Don’t starve mod Basics</h1>
+				<h2 id="Source_Code_Architecture">Source Code Architecture</h2>
+					<p>Source codes are in the don’t starve/data/scripts folder</p>
+					<p>Including Behaviours, Brains, Cameras, Components, Languages, Map, Nis, Prefabs, Scenarios, Screens, StateGraphs, Widgets, and Main files.</p>
+				<h3 id="Prefabs">Prefabs:</h3>
+					<p>Prefabs which can generate in the game listed in the Prefab folder. Such as beefalo</p>
+				<h3 id="Components">Components:</h3>
+					<p>components for a game entity such as  player control, health, hunger</p>
+					<p>Use AddComponent(“filename.lua”) to add a component to an entity</p>
+					<p>Then visit it by entity.components.filename</p>
+				<h3 id="Main_Files">Main Files</h3>
+				<h4>Constant: </h4>
+					<p>some Keys, Resulations defined in the constants.lua</p>
+				<h2 id="Mod_Architecture">Mod Architecture </h2>
+				<h3 id="Three_main_lua_code_files">Three main lua code files</h3>
+					<p>modmain.lua </p>
+					<p>modinfo.lua </p>
+					<p>modworldgenmain.lua</p>
+				</div>
+
+			<div class="col">
+				<div class="line-left blog-content-nav">
+					<nav class="navbar navbar-light bg-light">
+						<nav class="nav nav-pills flex-column">
+							<a class="smoothscroll" href="#Source_Code_Architecture">Source Code Architecture</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Prefabs">Prefabs</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Components">Components</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Main_Files">Main Files</a>
+								</nav>
+							<a class="smoothscroll" href="#Mod_Architecture">Mod Architecture</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Three_main_lua_code_files">Three main lua code files</a>
+								</nav>
+							</nav>
+						</nav>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://zheminggu.com/blog_assets/js/jquert-3.4.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
+    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script> 
+    $(document).ready(function(){
+		// add reuseable header
+		$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		
+		// add reuseable navbar
+		try{
+			var link = document.querySelector('link[rel="import"]').import; 
+//			console.log(link);
+			var content = link.querySelector('#navbar');
+//			console.log("content is " + content);
+			var active_el = link.querySelector('#steam');
+//			console.log(active_el);
+			active_el.classList.add('active');
+//			console.log(content);
+			document.querySelector('#navbar').appendChild(content.cloneNode(true));		
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+	 	}
+    });	
+    </script> 
+</body>
+</html>
