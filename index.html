@@ -9,8 +9,8 @@
 	
     <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
 	<title>Zheming Home</title>
-	 <link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
-	 <link href="https://zheminggu.com/myheadertemplete.html" rel="import">
+	 <!-- <link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
+	 <link href="myheadertemplete.html" rel="import"> -->
 	  <!-- Bootstrap CSS -->
   	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
@@ -291,21 +291,39 @@
     <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
-    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<!-- <script type="module">
+
+		import {header} from "./myheadertemplete.html";
+		console.log(header)
+	
+		
+	</script> -->
+
 	<script> 
     $(document).ready(function(){
 		// add reuseable header
-		try{
-			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
-			var content = link.querySelector('#header');
-			var active_el = link.querySelector('#HeaderHome');
-			active_el.classList.add('active');
-			document.querySelector('#header').appendChild(content.cloneNode(true));
+		$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+			var wrapper = document.createElement('div');
+			wrapper.innerHTML = data;
+			var home = wrapper.querySelector("#HeaderHome");
+			home.classList.add('active');
+			document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+		});
+		// $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+	
+
+		// try{
+		// 	var link = document.querySelector('link[rel="import"][href="myheadertemplete.html"]').import; 
+		// 	var content = link.querySelector('#header');
+		// 	var active_el = link.querySelector('#HeaderHome');
+		// 	active_el.classList.add('active');
+		// 	document.querySelector('#header').appendChild(content.cloneNode(true));
 			
-		}catch(e){
-			console.log(e);
-		    $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
-	 	}
+		// }catch(e){
+		// 	console.log(e);
+		//     $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+	 	// }
 		
 		// add reuseable navbar
 // 		try{
