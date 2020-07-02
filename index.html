@@ -303,45 +303,19 @@
 	<script> 
     $(document).ready(function(){
 		// add reuseable header
-		$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
 			var wrapper = document.createElement('div');
 			wrapper.innerHTML = data;
-			var home = wrapper.querySelector("#HeaderHome");
-			home.classList.add('active');
+			var active_el = wrapper.querySelector("#HeaderHome");
+			active_el.classList.add('active');
 			document.querySelector('#header').appendChild(wrapper.cloneNode(true));
 		});
-		// $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
-	
-
-		// try{
-		// 	var link = document.querySelector('link[rel="import"][href="myheadertemplete.html"]').import; 
-		// 	var content = link.querySelector('#header');
-		// 	var active_el = link.querySelector('#HeaderHome');
-		// 	active_el.classList.add('active');
-		// 	document.querySelector('#header').appendChild(content.cloneNode(true));
-			
-		// }catch(e){
-		// 	console.log(e);
-		//     $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
-	 	// }
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
 		
-		// add reuseable navbar
-// 		try{
-// 			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
-// //			console.log(link);
-// 			var content = link.querySelector('#navbar');
-// //			console.log("content is " + content);
-// 			var active_el = link.querySelector('#steam');
-// //			console.log(active_el);
-// 			active_el.classList.add('active');
-// //			console.log(content);
-// 			document.querySelector('#navbar').appendChild(content.cloneNode(true));
-			
-// 		}catch(e){
-// //			console.log(e);
-// 			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
-// 	 	}
-	
     });
 		
     </script> 

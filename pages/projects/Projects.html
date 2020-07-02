@@ -166,33 +166,17 @@
     $(document).ready(function(){
 		// add reuseable header
 		try{
-			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
-			var content = link.querySelector('#header');
-			var active_el = link.querySelector('#HeaderProjects');
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+			var wrapper = document.createElement('div');
+			wrapper.innerHTML = data;
+			var active_el = wrapper.querySelector("#HeaderProjects");
 			active_el.classList.add('active');
-			document.querySelector('#header').appendChild(content.cloneNode(true));
-			
+			document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+		});
 		}catch(e){
 			console.log(e);
-		    $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
-	 	}
-		
-		// add reuseable navbar
-// 		try{
-// 			var link = document.querySelector('link[rel="import"]').import; 
-// //			console.log(link);
-// 			var content = link.querySelector('#navbar');
-// //			console.log("content is " + content);
-// 			var active_el = link.querySelector('#steam');
-// //			console.log(active_el);
-// 			active_el.classList.add('active');
-// //			console.log(content);
-// 			document.querySelector('#navbar').appendChild(content.cloneNode(true));
-			
-// 		}catch(e){
-// //			console.log(e);
-// 			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
-// 	 	}
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
 	
     });
 		

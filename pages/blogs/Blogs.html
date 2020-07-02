@@ -9,8 +9,6 @@
 	
     <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
 	<title>Zheming Home</title>
-	 <link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
-	 <link href="https://zheminggu.com/myheadertemplete.html" rel="import">
 	 
 	  <!-- Bootstrap CSS -->
   	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
@@ -105,37 +103,21 @@
 	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
     <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
 	<script> 
-    $(document).ready(function(){
-			// add reuseable header
-			try{
-			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
-			var content = link.querySelector('#header');
-			var active_el = link.querySelector('#HeaderBlogs');
+	  $(document).ready(function(){
+		// add reuseable header
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+			var wrapper = document.createElement('div');
+			wrapper.innerHTML = data;
+			var active_el = wrapper.querySelector("#HeaderBlogs");
 			active_el.classList.add('active');
-			document.querySelector('#header').appendChild(content.cloneNode(true));
-			
+			document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+		});
 		}catch(e){
 			console.log(e);
-		    $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
-	 	}
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
 		
-		// add reuseable navbar
-// 		try{
-// 			var link = document.querySelector('link[rel="import"]').import; 
-// //			console.log(link);
-// 			var content = link.querySelector('#navbar');
-// //			console.log("content is " + content);
-// 			var active_el = link.querySelector('#steam');
-// //			console.log(active_el);
-// 			active_el.classList.add('active');
-// //			console.log(content);
-// 			document.querySelector('#navbar').appendChild(content.cloneNode(true));
-			
-// 		}catch(e){
-// //			console.log(e);
-// 			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
-// 	 	}
-	
     });
 		
     </script> 

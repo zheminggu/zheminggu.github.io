@@ -11,19 +11,28 @@
 	<script> 
     $(document).ready(function(){
 		// add reuseable header
-		$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderBlogs");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
 		
 		// add reuseable navbar
 		try{
-			var link = document.querySelector('link[rel="import"]').import; 
-//			console.log(link);
-			var content = link.querySelector('#navbar');
-//			console.log("content is " + content);
-			var active_el = link.querySelector('#steam');
-//			console.log(active_el);
-			active_el.classList.add('active');
-//			console.log(content);
-			document.querySelector('#navbar').appendChild(content.cloneNode(true));		
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#steam");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
 		}catch(e){
 //			console.log(e);
 			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 

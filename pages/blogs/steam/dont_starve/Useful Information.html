@@ -9,8 +9,6 @@
 	
     <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
 	<title>Dont starve\Useful information</title>
- 	<link href="https://zheminggu.com/myblognavbartemplete.html" rel="import">
- 	<link href="https://zheminggu.com/myheadertemplete.html" rel="import">
 	  <!-- Bootstrap CSS -->
   	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
@@ -180,34 +178,31 @@
     $(document).ready(function(){
 		// add reuseable header
 		try{
-			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myheadertemplete.html"]').import; 
-			var content = link.querySelector('#header');
-			var active_el = link.querySelector('#HeaderBlogs');
-			active_el.classList.add('active');
-			document.querySelector('#header').appendChild(content.cloneNode(true));
-			
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderBlogs");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
 		}catch(e){
 			console.log(e);
-		    $("#header").load("https://zheminggu.com/myheadertemplete.html"); 
-	 	}
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
 		
 		// add reuseable navbar
 		try{
-			var link = document.querySelector('link[rel="import"][href="https://zheminggu.com/myblognavbartemplete.html"]').import; 
-//			console.log(link);
-			var content = link.querySelector('#navbar');
-//			console.log("content is " + content);
-			var active_el = link.querySelector('#steam');
-//			console.log(active_el);
-			active_el.classList.add('active');
-//			console.log(content);
-			document.querySelector('#navbar').appendChild(content.cloneNode(true));
-			
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#steam");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
 		}catch(e){
-//			console.log(e);
+			//console.log(e);
 			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
 	 	}
-
     });
 		
     </script> 
