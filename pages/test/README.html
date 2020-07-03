@@ -1,0 +1,221 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+    <meta name="author" content="">  
+	
+    <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
+	  <title>README</title>
+     
+	  <!-- Bootstrap CSS -->
+  	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
+</head> 
+
+<body>
+	<!--header--> 
+	<div id ="header"></div>
+
+	<!--content-->
+	<div class="container-fluid">
+		<div class="row">
+			<!--navbar-->
+			<div id = "navbar"></div>
+
+			<div class="col-8 markdown-body">
+				<h1>Read Me</h1>
+				<h2 id="How_to_use">How to use</h2>
+					<p>This project is build with glfw3.3 FreeImage and openGL.</p>
+					<p>To load model successfully, the direction of model file should not contain any space, you can also input Data/Models/better-balls.d.txt or Data/Models/cow.d.txt to load exist models</p>
+					<p>input E to start preview mode</p>
+					<p>input D to stop preview mode</p>
+					<p>input R to start light mode</p>
+					<p>input F to stop light mode</p>
+					<p>input W to move forward camera</p>
+					<p>input S to move backward camera</p>
+					<p>input A to stop move camera</p>
+					<p>input 1 to change into constant shading model</p>
+					<p>input 2 to change into gouraud shading model</p>
+					<p>input 3 to change into phong shading model</p>
+					<p>right click mouse to drag model </p>
+				<h2 id="Project_result">Project result</h2>
+					<p>![image of balls](Result/balls.gif)</p>
+					<p>![image of cows](Result/cows.gif)</p>
+					<p><strong> bold </strong></p>
+					<p>if you want to use this website please go to <a href = "https://zheminggu.com">this web site</a> to get more information </p>
+					<p>sample image is here 
+					<figure class="figure">
+						<img src="https://zheminggu.com/blog_assets/images/blog/steam/DontStarveMod/wilson.jpg" alt="sample image">
+						<figcaption class="figure-caption text-center">sample image.</figcaption>
+					</figure> wooo 
+					<figure class="figure">
+						<img src="https://zheminggu.com/blog_assets/images/blog/steam/DontStarveMod/wilson.jpg" alt="sample image2">
+						<figcaption class="figure-caption text-center">sample image2.</figcaption>
+					</figure> waaa</p>
+					<p>this is a sample of video 
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://player.bilibili.com/player.html?aid=35564835&page=1&&high_quality=1" allowfullscreen></iframe>
+					</div> </p>
+					<p>video aspect could be 16:9, 21:9, 4:3, 2:1, 1:1</p>
+					<p>if you want to use bilibili video:</p>
+					<p>    find video you want to share</p>
+					<p>    click share button</p>
+					<p>    find embed link in it</p>
+					<p>    add http: in front of //   and if you want to display high quality video, you can add &&high_quality=1 at the end of link </p>
+					<p>    such as https://player.bilibili.com/player.html?aid=35564835&page=1&&high_quality=1 this is a link to <a href = "https://www.bilibili.com/video/BV1qb411c7iE">video I like</a> emmmm</p>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+<span style="color: rgb(228, 27, 218);">import</span> numpy as np
+<span style="color: rgb(228, 27, 218);">from</span> PIL <span style="color: rgb(228, 27, 218);">import</span> Image, ImageDraw
+screen_width = 640
+screen_height = 480
+image_buffer = [[[0,0,0,0] <span style="color: rgb(228, 27, 218);">for</span> _ <span style="color: rgb(228, 27, 218);">in</span> range(screen_width)] <span style="color: rgb(228, 27, 218);">for</span> _ <span style="color: rgb(228, 27, 218);">in</span> range(screen_height)]
+
+<span style="color: blue;">def</span> show_data_image():
+    txt = Image.new('RGBA',(640,480), (0,0,0,255))
+    d = ImageDraw.Draw(txt)
+    <span style="color: rgb(228, 27, 218);">for</span> h <span style="color: rgb(228, 27, 218);">in</span> range(screen_height):
+        <span style="color: rgb(228, 27, 218);">for</span> w <span style="color: rgb(228, 27, 218);">in</span> range(screen_width):
+            d.point((w,h),fill = (int(image_buffer[h][w][0]),int(image_buffer[h][w][1]),int(image_buffer[h][w][2]),255))
+    txt.show()
+
+<span style="color: blue;">def</span> data_to_color(data:list):
+    color_data = []
+    <span style="color: rgb(228, 27, 218);">for</span> r <span style="color: rgb(228, 27, 218);">in</span> range(5):
+        <span style="color: rgb(228, 27, 218);">for</span> g <span style="color: rgb(228, 27, 218);">in</span> range(5):
+            <span style="color: rgb(228, 27, 218);">for</span> b <span style="color: rgb(228, 27, 218);">in</span> range(5):
+                color = [r * 0.25, g * 0.25, b * 0.25]
+                color_data.append(color)
+
+    data_set = set(data)
+    num_data_kind = len(data_set)
+    print(data_set)
+    print(num_data_kind)
+    data_map = {}
+    <span style="color: rgb(228, 27, 218);">if</span> num_data_kind < len(color_data):
+        <span style="color: rgb(228, 27, 218);">for</span> i, s <span style="color: rgb(228, 27, 218);">in</span> enumerate(data_set):
+            data_map[str(s)] = color_data[i]
+    print(data_map)
+    <span style="color: rgb(228, 27, 218);">return</span> data_map
+
+<span style="color: blue;">def</span> show_image_data(path):
+    with open(path) as f:
+        data = f.read()
+        data = np.array([float(d) <span style="color: rgb(228, 27, 218);">for</span> d <span style="color: rgb(228, 27, 218);">in</span> data.split()])
+        print(f"this is file wave_{0}_cam_right.txt")
+        print(f"length of data is: {len(data)}")
+        data_map = data_to_color(data)
+        data = np.reshape(data, (480, 640))
+        print(data.shape)
+        print(data)
+
+        <span style="color: rgb(228, 27, 218);">for</span> h <span style="color: rgb(228, 27, 218);">in</span> range(screen_height):
+            <span style="color: rgb(228, 27, 218);">for</span> w <span style="color: rgb(228, 27, 218);">in</span> range(screen_width):
+                image_buffer[h][w][0] = data_map[str(data[h][w])][0] * 255
+                image_buffer[h][w][1] = data_map[str(data[h][w])][1] * 255
+                image_buffer[h][w][2] = data_map[str(data[h][w])][2] * 255
+                image_buffer[h][w][3] = 255
+        show_data_image()
+
+
+<span style="color: green;"># for i in range(11):</span>
+<span style="color: green;">#     show_image_data(f"C:\\Users\\zhemi\\Desktop\\output\\wave_{i}_cam_right.txt")</span>
+<span style="color: green;">#     show_image_data(f"C:\\Users\\zhemi\\Desktop\\output\\wave_{i}_cam_left.txt")</span>
+
+show_image_data(f"C:\\Users\\zhemi\\Desktop\\output\\wave_{0}_cam_right.txt")
+						</code>
+					</pre>
+				<h2 id="Project_structure">Project structure </h2>
+				<h3 id="Math_dir">Math dir: </h3>
+					<p>Math: define constant variables of math, contain some math methods</p>
+					<p>Matrix4: define a 4*4 matrix, implement some functional operation, such as Mat4*Mat4</p>
+					<p>Vector3: define a 3 dimensional vector, use to store point, manipulate points</p>
+					<p>Vector4: defines a 4 dimensional vector, use to calculate transformation</p>
+				<h3 id="Utils_dir">Utils dir:</h3>
+					<p>Draw: openCV method to draw lines, points in the future it will support draw colors.</p>
+					<p>File: use to open model, and save prefabs(not achieve yet)</p>
+					<p>Camera: the Camera in the world, calculate Mat_view and Mat_pers, defines FOV, aspect upvector, and Clipping Plane</p>
+					<p>ClippingPlane: clipping plane of camera</p>
+					<p>Debug: use to log information</p>
+					<p>EdgeTable: edge table structure </p>
+					<p>Light: light of the world</p>
+					<p>Model: Model to load, contains vertex and surface information</p>
+					<p>ModelEdge: edges in edge table</p>
+					<p>RenderModel: Model use to render, generate from original model to calculate transformation</p>
+					<p>Surface: model surface information</p>
+					<p>Texture: containing texture of a model</p>
+				<h3 id="Important_class">Important class</h3>
+					<p>World: world of this system</p>
+					<p>World::Prerun(): This is the pipeline of render process. It dealing with Back-face culling, Init vertices vector for models, make world to view transformation and view to </p>
+					<p>projection transformation, regulate model after transformation, then translate all the model surfaces into edge table,in the end, create image buffer with z buffer algorithm. </p>
+					<p>World::Run(): Render lines and colors with image buffer to screen.</p>
+					<p>ComputerGraphics: main entrance of the program, use glfw to create window, and then run the world </p>
+				</div>
+
+			<div class="col">
+				<div class="line-left blog-content-nav">
+					<nav class="navbar navbar-light bg-light">
+						<nav class="nav nav-pills flex-column">
+							<a class="smoothscroll" href="#How_to_use">How to use</a>
+							<a class="smoothscroll" href="#Project_result">Project result</a>
+							<a class="smoothscroll" href="#Project_structure">Project structure</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Math_dir">Math dir</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Utils_dir">Utils dir</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Important_class">Important class</a>
+								</nav>
+							</nav>
+						</nav>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://zheminggu.com/blog_assets/js/jquert-3.4.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
+    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script> 
+    $(document).ready(function(){
+		// add reuseable header
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderBlogs");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
+		
+		// add reuseable navbar
+		try{
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#steam");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+	 	}
+    });	
+    </script> 
+</body>
+</html>
