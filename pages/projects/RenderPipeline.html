@@ -119,7 +119,7 @@
 			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
 				var wrapper = document.createElement('div');
 				wrapper.innerHTML = data;
-				var active_el = wrapper.querySelector("#HeaderBlogs");
+				var active_el = wrapper.querySelector("#HeaderProjects");
 				active_el.classList.add('active');
 				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
 			});
