@@ -1,0 +1,147 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+    <meta name="author" content="">  
+	
+    <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
+	  <title>RenderPipeline</title>
+     
+	  <!-- Bootstrap CSS -->
+  	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
+</head> 
+
+<body>
+	<!--header--> 
+	<div id ="header"></div>
+
+	<!--content-->
+	<div class="container-fluid">
+		<div class="row">
+			<!--navbar-->
+			<div id = "navbar"></div>
+
+			<div class="col-8 markdown-body">
+				<h1>Render Pipeline</h1>
+					<p>This project is to build a render pipeline. It was build with c++ </p>
+				<h2 id="Background">Background</h2>
+					<p>This project is for my computer graphics class. It built with Glfw 3.3, FreeImage, and OpenGL, you can download it in <a href = "https://github.com/zheminggu/computer-graphics">my github link</a></p>
+				<h2 id="User_guide">User guide</h2>
+					<p>You can load model with a txt file, which contains vertex and surface information, you can also input Data/Models/better-balls.d.txt or Data/Models/cow.d.txt to load exist models</p>
+					<p>input E to start preview mode</p>
+					<p>input D to stop preview mode</p>
+					<p>input R to start light mode</p>
+					<p>input F to stop light mode</p>
+					<p>input W to move forward camera</p>
+					<p>input S to move backward camera</p>
+					<p>input A to stop move camera</p>
+					<p>input 1 to change into constant shading model</p>
+					<p>input 2 to change into gouraud shading model</p>
+					<p>input 3 to change into phong shading model</p>
+					<p>right click mouse to drag model </p>
+				<h2 id="Project_result">Project result</h2>
+					<p>
+					<figure class="figure">
+						<img src="https://github.com/zheminggu/computer-graphics/raw/master/Result/balls.gif" alt="image of balls">
+						<figcaption class="figure-caption text-center">image of balls.</figcaption>
+					</figure></p>
+					<p>
+					<figure class="figure">
+						<img src="https://github.com/zheminggu/computer-graphics/raw/master/Result/cows.gif" alt="image of cows">
+						<figcaption class="figure-caption text-center">image of cows.</figcaption>
+					</figure></p>
+				<h2 id="Project_structure">Project structure </h2>
+				<h3 id="Math_dir">Math dir: </h3>
+					<p><b>Math:</b> define constant variables of math, contain some math methods</p>
+					<p><b>Matrix4:</b> define a 4*4 matrix, implement some functional operation, such as Mat4*Mat4</p>
+					<p><b>Vector3:</b> define a 3 dimensional vector, use to store point, manipulate points</p>
+					<p><b>Vector4:</b> defines a 4 dimensional vector, use to calculate transformation</p>
+				<h3 id="Utils_dir">Utils dir:</h3>
+					<p><b>Draw:</b> openCV method to draw lines, points in the future it will support draw colors.</p>
+					<p><b>File:</b> use to open model, and save prefabs(not achieve yet)</p>
+					<p><b>Camera:</b> the Camera in the world, calculate Mat_view and Mat_pers, defines FOV, aspect upvector, and Clipping Plane</p>
+					<p><b>ClippingPlane:</b> clipping plane of camera</p>
+					<p><b>Debug:</b> use to log information</p>
+					<p><b>EdgeTable:</b> edge table structure </p>
+					<p><b>Light:</b> light of the world</p>
+					<p><b>Model:</b> Model to load, contains vertex and surface information</p>
+					<p><b>ModelEdge:</b> edges in edge table</p>
+					<p><b>RenderModel:</b> Model use to render, generate from original model to calculate transformation</p>
+					<p><b>Surface:</b> model surface information</p>
+					<p><b>Texture:</b> containing texture of a model</p>
+				<h3 id="Important_class">Important class</h3>
+					<p><b>World:</b> world of this system</p>
+					<p><b>World::Prerun():</b> This is the pipeline of render process. It dealing with Back-face culling, Init vertices vector for models, make world to view transformation and view to projection transformation, regulate model after transformation, then translate all the model surfaces into edge table,in the end, create image buffer with z buffer algorithm. </p>
+					<p><b>World::Run():</b> Render lines and colors with image buffer to screen.</p>
+					<p><b>ComputerGraphics:</b> main entrance of the program, use glfw to create window, and then run the world </p>
+				</div>
+
+			<div class="col">
+				<div class="line-left blog-content-nav">
+					<nav class="navbar navbar-light bg-light">
+						<nav class="nav nav-pills flex-column">
+							<a class="smoothscroll" href="#Background">Background</a>
+							<a class="smoothscroll" href="#User_guide">User guide</a>
+							<a class="smoothscroll" href="#Project_result">Project result</a>
+							<a class="smoothscroll" href="#Project_structure">Project structure</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Math_dir">Math dir</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Utils_dir">Utils dir</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Important_class">Important class</a>
+								</nav>
+							</nav>
+						</nav>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://zheminggu.com/blog_assets/js/jquert-3.4.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
+    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script> 
+    $(document).ready(function(){
+		// add reuseable header
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderBlogs");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
+		
+		// add reuseable navbar
+		try{
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#game_development");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+	 	}
+    });	
+    </script> 
+</body>
+</html>
