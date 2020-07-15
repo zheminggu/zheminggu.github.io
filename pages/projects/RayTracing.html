@@ -1,0 +1,151 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+    <meta name="author" content="">  
+	
+    <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
+	  <title>RayTracing</title>
+     
+	  <!-- Bootstrap CSS -->
+  	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
+</head> 
+
+<body>
+	<!--header--> 
+	<div id ="header"></div>
+
+	<!--content-->
+	<div class="container-fluid">
+		<div class="row">
+			<!--navbar-->
+			<div id = "navbar"></div>
+
+			<div class="col-8 markdown-body">
+				<h1>Ray Tracing</h1>
+				<h2 id="Background">Background</h2>
+					<p>This is a python project for my computer graphics final project. In this project, I use jupyter notebook to edit my program. You can download it in <a href = "https://github.com/zheminggu/Ray-Tracing">my github link</a>. To better understand project you can read comments in the jupyter notebook. This program only achieved sphere interaction, for further step, you can add triangle intersection, then it would able to render arbitrary models. To speed up the program, you run it in <strong>CUDA </strong> or other GPU library, instead of render it in one core of CPU.</p>
+				<h2 id="User_guide">User guide</h2>
+				<h3 id="Install_jupyter_notebook">Install jupyter notebook</h3>
+					<p>To run this python project, make sure python is installed, the go to terminal which contains python environment.</p>
+					<p>Input:</p>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    pip install numpy
+    pip install PIL
+    pip install notebook
+						</code>
+					</pre>
+				<h3 id="Run_program">Run program</h3>
+					<p>run jupyter notebook by input</p>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    jupyter notebook
+						</code>
+					</pre>
+					<p>it should open a jupyter notebook website in your web browser, then, open my jupyter notebook in your web browser.</p>
+					<p>After open my jupyter notebook, click <strong>Run </strong> button, and then click <strong> Restart and Run All Cells </strong> in pop out window.</p>
+					<p>Wait until progress bar at the bottom of program move to 100%, then it would show a ray traced picture in your picture browser.</p>
+				<h2 id="Result">Result</h2>
+					<p>
+					<figure class="figure">
+						<img src="https://github.com/zheminggu/Ray-Tracing/raw/master/Result/ray%20tracing%20bump%201.png" alt="ray tracing with bump mapping">
+						<figcaption class="figure-caption text-center">ray tracing with bump mapping.</figcaption>
+					</figure></p>
+					<p>
+					<figure class="figure">
+						<img src="https://github.com/zheminggu/Ray-Tracing/raw/master/Result/ray%20tracing%20HD.png" alt="ray tracing without bump mapping">
+						<figcaption class="figure-caption text-center">ray tracing without bump mapping.</figcaption>
+					</figure></p>
+					<p>
+					<figure class="figure">
+						<img src="https://github.com/zheminggu/Ray-Tracing/raw/master/Result/ray%20tracing%20HD%20close.png" alt="ray tracing without bump mapping close">
+						<figcaption class="figure-caption text-center">ray tracing without bump mapping close.</figcaption>
+					</figure></p>
+				<h2 id="Project_structure">Project structure</h2>
+				<h3 id="Define">Define</h3>
+					<p><strong>Load texture:</strong> At the very beginning load model textures for each model </p>
+					<p><strong>Define models:</strong> Then define sphere models with various parameters. These models would behave differently in final picture</p>
+					<p><strong>Define lights:</strong> Light is also important in a scene, so after defined model define lights with different parameters.</p>
+					<p><strong>Define parameters:</strong> define parameters such as image buffer, viewport width, viewport height, distance from camera to viewport, and camera position</p>
+				<h3 id="Tracing_ray">Tracing ray</h3>
+					<p>The main entrance of this program is actually at the vary bottom, it's in section ray tracing all the screen position. </p>
+					<p><strong>Ray tracing all the screen position:</strong> For each pixel, from camera to viewport shoot a ray, after finish tracing <strong>show image</strong>.</p>
+					<p><strong>Shoot a ray to get color:</strong> for each shoot ray, detect <strong> if intersect </strong> with any sphere. if intersect, <strong>get a color</strong>, and reflect ray from intersect position. Otherwise, return black.</p>
+					<p><strong>Detect intersect</strong> <i>(if intersect)</i>: calculate if the ray is intersect with any sphere</p>
+					<p><strong>Calculate color</strong> <i>(get a color)</i>: calculate color according to light parameter and intersect position and model parameter, then return color.</p>
+					<p><strong>Show Images</strong> <i>(show image)<i>: show image according to image buffer.</p>
+				</div>
+
+			<div class="col">
+				<div class="line-left blog-content-nav">
+					<nav class="navbar navbar-light bg-light">
+						<nav class="nav nav-pills flex-column">
+							<a class="smoothscroll" href="#Background">Background</a>
+							<a class="smoothscroll" href="#User_guide">User guide</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Install_jupyter_notebook">Install jupyter notebook</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Run_program">Run program</a>
+								</nav>
+							<a class="smoothscroll" href="#Result">Result</a>
+							<a class="smoothscroll" href="#Project_structure">Project structure</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Define">Define</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Tracing_ray">Tracing ray</a>
+								</nav>
+							</nav>
+						</nav>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://zheminggu.com/blog_assets/js/jquert-3.4.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
+    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script> 
+    $(document).ready(function(){
+		// add reuseable header
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderProjects");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
+		
+		// add reuseable navbar
+		try{
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#game_development");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+	 	}
+    });	
+    </script> 
+</body>
+</html>
