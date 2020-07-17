@@ -1,0 +1,280 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+    <meta name="author" content="">  
+	
+    <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
+	  <title>CppInputAndOutPut</title>
+     
+	  <!-- Bootstrap CSS -->
+  	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
+</head> 
+
+<body>
+	<!--header--> 
+	<div id ="header"></div>
+
+	<!--content-->
+	<div class="container-fluid">
+		<div class="row">
+			<!--navbar-->
+			<div id = "navbar"></div>
+
+			<div class="col-8 markdown-body">
+				<h1>Cpp input and output</h1>
+				<h2 id="Screen_or_terminal">Screen or terminal</h2>
+				<h3 id="Include">Include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+	#<span style="color: rgb(228, 27, 218);">include</span> &ltiostream&gt <span style="color: green;">// input output stream</span>
+	#<span style="color: rgb(228, 27, 218);">include</span> &ltstring&gt <span style="color: green;">// use <span style="color: blue;">string</span> to receive user input</span>
+						</code>
+					</pre>
+				<h3 id="Output">Output</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+	Std::cout&lt&lt "some string"&lt&lt <span style="color: rgb(228, 27, 218);">std</span>:: endl;
+						</code>
+					</pre>
+				<h3 id="Input">Input </h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+	<span style="color: blue;">string</span> myString;
+	<span style="color: green;">// For one word</span>
+	<span style="color: rgb(228, 27, 218);">std</span>::cin&gt&gt myString;
+	<span style="color: green;">// For one line</span>
+	getline(<span style="color: rgb(228, 27, 218);">std</span>::cin, myString);
+						</code>
+					</pre>
+				<h3 id="Tips_">Tips :</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+	<span style="color: green;">// String to number</span>
+		#<span style="color: rgb(228, 27, 218);">include</span> &ltsstram&gt <span style="color: green;">// <span style="color: blue;">string</span> stream</span>
+		<span style="color: blue;">int</span> myInt;
+		<span style="color: blue;">float</span> myFloat;
+		<span style="color: blue;">double</span> myDouble;
+		<span style="color: rgb(228, 27, 218);">std</span>::stringstream(myString)&gt&gt myInt;
+		<span style="color: rgb(228, 27, 218);">std</span>::stringstream(myString)&gt&gt myFloat;
+        <span style="color: rgb(228, 27, 218);">std</span>::stringstream(myString)&gt&gt myDouble;
+						</code>
+					</pre>
+				<h2 id="File">File</h2>
+				<h3 id="Include">Include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    <span style="color: green;">// input file stream</span>
+	#<span style="color: rgb(228, 27, 218);">include</span> &ltifstream&gt   
+    <span style="color: green;">// output file stream</span>
+	#<span style="color: rgb(228, 27, 218);">include</span> &ltofstream&gt 
+    <span style="color: green;">// input and output file stream</span>
+	#<span style="color: rgb(228, 27, 218);">include</span> &ltfstream&gt  
+						</code>
+					</pre>
+				<h3 id="Open_File">Open File</h3>
+				<h4>Simple way:</h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    <span style="color: rgb(228, 27, 218);">std</span>::ifstream inputFile("input file path");
+    <span style="color: rgb(228, 27, 218);">std</span>::ofstream outputFile("output file path");
+						</code>
+					</pre>
+				<h4>Complex way:</h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    <span style="color: green;">// use function   .open(file path , mode)</span>
+    <span style="color: rgb(228, 27, 218);">std</span>::ifstream inputFile;
+    <span style="color: rgb(228, 27, 218);">std</span>::ofstream outputFile;
+    <span style="color: rgb(228, 27, 218);">std</span>::inputFile.open("File path", <span style="color: rgb(228, 27, 218);">ios</span>::<span style="color: rgb(228, 27, 218);">in</span> | <span style="color: rgb(228, 27, 218);">ios</span>::binary)
+    <span style="color: rgb(228, 27, 218);">std</span>::outputFile.open("File path", <span style="color: rgb(228, 27, 218);">ios</span>::out | <span style="color: rgb(228, 27, 218);">ios</span>::binary | <span style="color: rgb(228, 27, 218);">ios</span>::app)
+						</code>
+					</pre>
+				<h4>how to write mode?</h4>
+					<p>			' | ' combines mode together</p>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">function</th>
+								<th scope="col">description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">ios:in</th>
+								<td>open for input</td>
+							</tr>
+							<tr>
+								<th scope ="row">ios::out</th>
+								<td>open for output</td>
+							</tr>
+							<tr>
+								<th scope ="row">ios::binary</th>
+								<td>open in binary mode</td>
+							</tr>
+							<tr>
+								<th scope ="row">ios::ate</th>
+								<td>set initial position at the end of file</td>
+							</tr>
+							<tr>
+								<th scope ="row">ios::app</th>
+								<td>all output are performed at the end of file</td>
+							</tr>
+							<tr>
+								<th scope ="row">ios::trunc</th>
+								<td>delete previous content and add new one</td>
+							</tr>
+						</tbody>
+					</table>
+				<h3 id="Be_Safe">Be Safe!!!</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+	<span style="color: rgb(228, 27, 218);">std</span>::ifstream inputFile("input file path");
+	<span style="color: rgb(228, 27, 218);">std</span>::ofstream outputFile("output file path");
+    <span style="color: green;">// outputFile is the same</span>
+	<span style="color: rgb(228, 27, 218);">if</span>( inputFile.is_open() ){                
+		<span style="color: green;">// make operations </span>
+		
+		inputFile.close();
+	}
+						</code>
+					</pre>
+				<h3 id="Output">Output</h3>
+				<h4>normal file </h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    <span style="color: rgb(228, 27, 218);">std</span>::ofstream outputFile("output file path");
+    <span style="color: rgb(228, 27, 218);">if</span>(outputFile.is_open()){
+        outputFile&lt&lt "this is  a line\n";
+        outputFile&lt&lt "this is another line \n"; 
+        outputFile.close();
+    }
+						</code>
+					</pre>
+				<h4>binary file</h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    <span style="color: rgb(228, 27, 218);">std</span>::ofstream ouputFile;
+    <span style="color: green;">// any size you need</span>
+    <span style="color: blue;">int</span> size = 100;                          
+    <span style="color: blue;">char</span>* data = new char[size];
+    <span style="color: green;">// modify data here</span>
+    
+    outputFile.open("output example.bin", <span style="color: rgb(228, 27, 218);">ios</span>::out | <span style="color: rgb(228, 27, 218);">ios</span>::binary );
+    <span style="color: rgb(228, 27, 218);">if</span>(outputFile.is_open()){
+        outputFile.write(data, size);
+        outputFile.close();
+    }
+    delete[] data;
+						</code>
+					</pre>
+				<h3 id="Input">Input</h3>
+				<h4>normal file</h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    ifstream inputFile("input file path");
+    <span style="color: blue;">string</span> line;
+    <span style="color: rgb(228, 27, 218);">if</span>(inputFile.is_open()){
+        <span style="color: rgb(228, 27, 218);">while</span>(getline(inputFile, line)){
+            cout&lt&lt line&lt&lt '\n';  
+            <span style="color: green;">// you can modifie line here</span>
+            
+        }
+        inputFile.close();
+    }
+						</code>
+					</pre>
+				<h4>binary File</h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+    <span style="color: rgb(228, 27, 218);">std</span>::ifstream inputFile;
+    <span style="color: green;">// any size you need</span>
+    <span style="color: blue;">int</span> size = 100;                     
+    <span style="color: blue;">char</span>* data = new char[size];
+    <span style="color: rgb(228, 27, 218);">if</span>(inputFile.is_open()){
+        inputfile.read(data, size);
+        <span style="color: green;">// modify data here</span>
+        
+        inputfile.close();
+    }
+    
+    delete[] data;
+						</code>
+					</pre>
+				</div>
+
+			<div class="col">
+				<div class="line-left blog-content-nav">
+					<nav class="navbar navbar-light bg-light">
+						<nav class="nav nav-pills flex-column">
+							<a class="smoothscroll" href="#Screen_or_terminal">Screen or terminal</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Include">Include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Output">Output</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Input">Input</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Tips_">Tips </a>
+								</nav>
+							<a class="smoothscroll" href="#File">File</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Include">Include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Open_File">Open File</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Be_Safe">Be Safe</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Output">Output</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Input">Input</a>
+								</nav>
+							</nav>
+						</nav>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://zheminggu.com/blog_assets/js/jquert-3.4.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
+    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script> 
+    $(document).ready(function(){
+		// add reuseable header
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderBlogs");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
+		
+		// add reuseable navbar
+		try{
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#steam");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+	 	}
+    });	
+    </script> 
+</body>
+</html>
