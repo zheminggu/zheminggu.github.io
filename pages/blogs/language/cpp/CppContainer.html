@@ -1,0 +1,769 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+    <meta name="author" content="">  
+	
+    <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
+	  <title>CppContainer</title>
+     
+	  <!-- Bootstrap CSS -->
+  	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
+</head> 
+
+<body>
+	<!--header--> 
+	<div id ="header"></div>
+
+	<!--content-->
+	<div class="container-fluid">
+		<div class="row">
+			<!--navbar-->
+			<div id = "navbar"></div>
+
+			<div class="col-8 markdown-body">
+				<h1>Cpp containers</h1>
+				<h2 id="Common_functions">Common functions</h2>
+					<p>this section describes the meaning of each common functions to help understand the name of each function, so that easier to memorize functions in different container.</p>
+					<p><strong>c means container,  i means index, e means element</strong></p>
+				<h3 id="get_elements">get elements</h3>
+				<h4> useful</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">container[i]</th>
+								<td>get elements at index i</td>
+							</tr>
+							<tr>
+								<th scope ="row">.front()</th>
+								<td>get first element</td>
+							</tr>
+							<tr>
+								<th scope ="row">.back()</th>
+								<td>get last element</td>
+							</tr>
+							<tr>
+								<th scope ="row">.find(e)</th>
+								<td>find element, only for maps and sets</td>
+							</tr>
+							<tr>
+								<th scope ="row">.count(e)</th>
+								<td>count the number of element (0 or 1), only for maps and sets</td>
+							</tr>
+						</tbody>
+					</table>
+				<h4>might use </h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.at(i)</th>
+								<td>equals to c[i]</td>
+							</tr>
+							<tr>
+								<th scope ="row">.data()</th>
+								<td>a pointer to first element  equals to *c or c[0]</td>
+							</tr>
+						</tbody>
+					</table>
+				<h3 id="add_elements">add elements</h3>
+				<h4>useful</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.push_back(e)</th>
+								<td>push an element at the back of container</td>
+							</tr>
+							<tr>
+								<th scope ="row">.insert(i, e)</th>
+								<td>insert an element at index I</td>
+							</tr>
+						</tbody>
+					</table>
+				<h4>might use</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.emplace_back(args)</th>
+								<td>faster way to push at back</td>
+							</tr>
+							<tr>
+								<th scope ="row">.emplace(i, args)</th>
+								<td>faster way to insert at index I</td>
+							</tr>
+							<tr>
+								<th scope ="row">.push_front(e)</th>
+								<td>push an element at the front of container</td>
+							</tr>
+						</tbody>
+					</table>
+				<h4>insert vs emplace </h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+<span style="color: blue;">class</span> MyClass{
+    <span style="color: blue;">int</span> a;
+    <span style="color: blue;">float</span> b;
+}
+vector&ltMyClass&gt c;
+<span style="color: blue;">int</span> i= 3;
+<span style="color: green;">// <span style="color: rgb(228, 27, 218);">with</span> insert</span>
+MyClass e(1, 1.5);
+c.insert(i, e);
+<span style="color: green;">// <span style="color: rgb(228, 27, 218);">with</span> emplace</span>
+c.emplace(i, 1, 1,5)  <span style="color: green;">// 1, 1.5 is arguments to construct MyClass </span>
+						</code>
+					</pre>
+				<h3 id="remove_elements">remove elements</h3>
+				<h4>useful</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.erase(i)</th>
+								<td>pop elements at I</td>
+							</tr>
+							<tr>
+								<th scope ="row">.pop_back()</th>
+								<td>pop elementes at the end</td>
+							</tr>
+							<tr>
+								<th scope ="row">clear()</th>
+								<td>pop all the elements</td>
+							</tr>
+						</tbody>
+					</table>
+				<h4>might use</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.erase_if(I, function)</th>
+								<td>pop elements at I if function return true</td>
+							</tr>
+						</tbody>
+					</table>
+				<h3 id="iterate">iterate</h3>
+				<h4>useful</h4>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//for each loop 
+<span style="color: rgb(228, 27, 218);">for</span>(auto& e: c){  }
+
+//iterate through
+<span style="color: rgb(228, 27, 218);">for</span>(iterator it = c.begin(); it!= c.end(); it++){  }
+
+//without iterator
+<span style="color: rgb(228, 27, 218);">for</span>(<span style="color: blue;">int</span> i =0; i&lt c.size(); i++){  } 
+						</code>
+					</pre>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.begin()</th>
+								<td>iterator point to first element</td>
+							</tr>
+							<tr>
+								<th scope ="row">.end()</th>
+								<td>iterator point to last element</td>
+							</tr>
+						</tbody>
+					</table>
+				<h4>might use</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.rbegin()</th>
+								<td>reversed begin = .end()</td>
+							</tr>
+							<tr>
+								<th scope ="row">.rend()</th>
+								<td>reversed end = .begin()</td>
+							</tr>
+							<tr>
+								<th scope ="row">.cbegin()</th>
+								<td>const iterator point to first element,  use it when you don't want to modify element in loop</td>
+							</tr>
+							<tr>
+								<th scope ="row">.cend()</th>
+								<td>const iterator point to last element, use it when you don't want to modify element in loop</td>
+							</tr>
+							<tr>
+								<th scope ="row">.crbegin()</th>
+								<td>const reversed begin</td>
+							</tr>
+							<tr>
+								<th scope ="row">.crend()</th>
+								<td>const reversed end</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>		</p>
+				<h3 id="check_size">check size</h3>
+				<h4>useful</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.size()</th>
+								<td>return the number of elements in the container</td>
+							</tr>
+							<tr>
+								<th scope ="row">.empty()</th>
+								<td>check if container is empty</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>	</p>
+				<h4>might use</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.capacity()</th>
+								<td>return the size of the storage space currently allocated for the vector</td>
+							</tr>
+							<tr>
+								<th scope ="row">.max_size()</th>
+								<td>max number of elements vector can allocate</td>
+							</tr>
+						</tbody>
+					</table>
+				<h3 id="modify_size">modify size</h3>
+				<h4>might use</h4>
+					<table class="table table-bordered table-hover">
+						<thead style="background-color: #6c757d; color: azure;">
+							<tr>
+								<th scope="col">Function</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope ="row">.shrink_to_fit()</th>
+								<td>shrink capacity to fit size</td>
+							</tr>
+							<tr>
+								<th scope ="row">.reserve(mySize)</th>
+								<td>request to shrink capacity to fit mySize</td>
+							</tr>
+							<tr>
+								<th scope ="row">.resize(mySize)</th>
+								<td>shrink size to mySize</td>
+							</tr>
+						</tbody>
+					</table>
+				<h2 id="Array">Array</h2>
+					<p>c++ kind array, add some functions than normal array</p>
+				<h3 id="feature">feature</h3>
+					<p>	• cannot modify size and capacity</p>
+					<p>	• .fill(): fill array with value</p>
+					<p>	• access element is quick</p>
+				<h3 id="include">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltarray&gt
+						</code>
+					</pre>
+				<h3 id="init">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::array&ltT, size&gt 
+<span style="color: rgb(228, 27, 218);">std</span>::array&ltint, 2&gt a = {1,2} ;
+&gt&gta = (1,2)
+a.fill(1);
+&gt&gt a = (1,1)
+						</code>
+					</pre>
+				<h2 id="Vector">Vector</h2>
+					<p>array which can change size</p>
+				<h3 id="feature1">feature</h3>
+					<p>	• very common</p>
+					<p>	• insert is slow</p>
+					<p>	• access element is quick</p>
+				<h3 id="include1">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltvector&gt
+						</code>
+					</pre>
+				<h3 id="init1">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::vector&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::vector&ltint&gt a = {1,2};
+
+<span style="color: rgb(228, 27, 218);">std</span>::vector&ltint&gt a(2, 8);
+&gt&gt a = (8, 8)
+
+<span style="color: rgb(228, 27, 218);">std</span>::vector&ltint&gt a(2);
+&gt&gt a = (0, 0)
+						</code>
+					</pre>
+				<h2 id="Forward_list">Forward_list</h2>
+					<p>one direction linked list</p>
+				<h3 id="feature2">feature</h3>
+					<p>	insert is quick </p>
+					<p>	access element is slow</p>
+					<p>	</p>
+				<h3 id="include2">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltforward_list&gt
+						</code>
+					</pre>
+				<h3 id="init2">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::forward_list&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::forward_list&ltint&gt a = {1,2}
+						</code>
+					</pre>
+				<h3 id="unique">unique</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+.push_front(e)
+.pop_front()
+.emplace_front(arg)
+.insert_after(i,e)
+.erase_after(i)
+						</code>
+					</pre>
+				<h2 id="List">List</h2>
+					<p>bi-diectional linked list</p>
+				<h3 id="feature3">feature</h3>
+					<p>	insert is quick</p>
+					<p>	access element is slow</p>
+					<p>	</p>
+				<h3 id="include3">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltlist&gt
+						</code>
+					</pre>
+				<h3 id="init3">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::list&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::list&ltint&gt a = {1,2}
+						</code>
+					</pre>
+				<h3 id="unique1">unique</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+.push_front(e)
+.pop_front()
+.emplace_front(arg)
+						</code>
+					</pre>
+				<h2 id="Set">Set</h2>
+					<p>store unique elements following a specific order</p>
+				<h3 id="feature4">feature</h3>
+					<p>	• access element slower than unordered_set</p>
+					<p>	• elements are unique</p>
+					<p>	• can iterate through elements by order</p>
+				<h3 id="include4">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltset&gt
+						</code>
+					</pre>
+				<h3 id="init4">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::set&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::set&ltint&gt a = {1, 2};
+						</code>
+					</pre>
+				<h2 id="Unordered_set">Unordered_set</h2>
+					<p>store unique elements in no particular order</p>
+				<h3 id="feature5">feature</h3>
+					<p>	• access element quicker</p>
+					<p>	• elements are unique</p>
+					<p>	• iterate is difficult</p>
+				<h3 id="include5">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltunordered_set&gt
+						</code>
+					</pre>
+				<h3 id="init5">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::unordered_set&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::unordered_set&ltint&gt a = {1,2};
+						</code>
+					</pre>
+				<h2 id="Map">Map</h2>
+					<p>store elements formed by a combination of <key, value>, following a specific order</p>
+				<h3 id="feature6">feature</h3>
+					<p>	access element slower than unordered_map</p>
+					<p>	key are unique</p>
+					<p>	can iterate through by order</p>
+					<p>	</p>
+					<p>	</p>
+				<h3 id="include6">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltmap&gt
+						</code>
+					</pre>
+				<h3 id="init6">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::map &ltK, V&gt
+<span style="color: rgb(228, 27, 218);">std</span>::map&ltstring, int&gt a = {{"1",1},  {"2", 2}};
+						</code>
+					</pre>
+				<h2 id="Unordered_map">Unordered_map</h2>
+					<p>store elements formed by a combination of <key,value> following a specific order</p>
+				<h3 id="feature7">feature</h3>
+					<p>	access element quicker</p>
+					<p>	keys are unique</p>
+					<p>	iterate is difficult</p>
+					<p>	</p>
+					<p>	</p>
+					<p>	</p>
+				<h3 id="include7">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltunordered_map&gt
+						</code>
+					</pre>
+				<h3 id="init7">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::unordered_map&ltK, V&gt
+<span style="color: rgb(228, 27, 218);">std</span>::unordered_map&ltstring, int&gt a = {{"1", 1}, { "2", 2}};
+						</code>
+					</pre>
+				<h2 id="Queue">Queue</h2>
+					<p>first in first out</p>
+				<h3 id="feature8">feature</h3>
+					<p>	• .push()  push back</p>
+					<p>	• .pop()  pop front</p>
+				<h3 id="include8">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltqueue&gt
+						</code>
+					</pre>
+				<h3 id="init8">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::quque&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::queue&ltint&gt a;
+						</code>
+					</pre>
+				<h2 id="Deque">Deque</h2>
+					<p>double ended queue</p>
+				<h3 id="feature9">feature</h3>
+					<p>	.push_back()</p>
+					<p>	.push_front()</p>
+					<p>	.pop_back()</p>
+					<p>	.pop_front()</p>
+					<p>	.emplace_back()</p>
+					<p>	.emplace_front()</p>
+					<p>	</p>
+				<h3 id="include9">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltdeque&gt
+						</code>
+					</pre>
+				<h3 id="init9">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::deque&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::deque&ltint&gt a
+						</code>
+					</pre>
+				<h2 id="Stack">Stack</h2>
+					<p>Last in first out</p>
+				<h3 id="feature10">feature</h3>
+					<p>	.top()  element at the top</p>
+					<p>	.push()  push back</p>
+					<p>	.pop()   pop back</p>
+					<p>	</p>
+				<h3 id="include10">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#include&ltstack&gt
+						</code>
+					</pre>
+				<h3 id="init10">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+//<span style="color: rgb(228, 27, 218);">std</span>::stack&ltT&gt
+<span style="color: rgb(228, 27, 218);">std</span>::stack&ltint&gt a;
+						</code>
+					</pre>
+				<h2 id="Heap">Heap</h2>
+					<p><strong>max heap</strong></p>
+					<p>heap is a kind of vector, which defined in the algorithm, so to use heap, you need to include algorithm</p>
+				<h3 id="include11">include</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+#<span style="color: rgb(228, 27, 218);">include</span> &ltalgorithm&gt
+#<span style="color: rgb(228, 27, 218);">include</span> &ltvector&gt
+						</code>
+					</pre>
+				<h3 id="init11">init</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+<span style="color: rgb(228, 27, 218);">std</span>::vector&ltint&gt myVector = {10, 20, 30, 5, 15};
+<span style="color: rgb(228, 27, 218);">std</span>::make_heap(v.begin(), v.end());
+						</code>
+					</pre>
+				<h3 id="get_front">get front</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+myVector.front();
+						</code>
+					</pre>
+				<h3 id="add_element">add element</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+myVector.push_back(99);
+<span style="color: rgb(228, 27, 218);">std</span>::push_heap(myVector.begin(), myVector.end());
+						</code>
+					</pre>
+				<h3 id="remove_element">remove element</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+<span style="color: rgb(228, 27, 218);">std</span>::pop_heap(myVector.begin(), myVector.end());
+myVector.pup_back();
+						</code>
+					</pre>
+				<h3 id="sort">sort</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+<span style="color: rgb(228, 27, 218);">std</span>::sort_heap(myVector.begin(), myVector.end());
+						</code>
+					</pre>
+				<h2 id="Compare_Tables">Compare Tables</h2>
+				<h3 id="Compare_arrays">Compare arrays</h3>
+					<p>
+					<figure class="figure">
+						<img src="https://zheminggu.com/blog_assets/images/blog/language/cpp/compare%20array.png" alt="compare arrays">
+						<figcaption class="figure-caption text-center">compare arrays.</figcaption>
+					</figure></p>
+				<h3 id="Compare_containers">Compare containers</h3>
+					<p>
+					<figure class="figure">
+						<img src="https://zheminggu.com/blog_assets/images/blog/language/cpp/compare%20container.png" alt="compare container">
+						<figcaption class="figure-caption text-center">compare container.</figcaption>
+					</figure></p>
+				<h2 id="reference">reference</h2>
+					<p><a href = "http://www.cplusplus.com/doc/tutorial/">cplusplus.com</a> http://www.cplusplus.com/doc/tutorial/</p>
+				</div>
+
+			<div class="col">
+				<div class="line-left blog-content-nav">
+					<nav class="navbar navbar-light bg-light">
+						<nav class="nav nav-pills flex-column">
+							<a class="smoothscroll" href="#Common_functions">Common functions</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#get_elements">get elements</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#add_elements">add elements</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#remove_elements">remove elements</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#iterate">iterate</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#check_size">check size</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#modify_size">modify size</a>
+								</nav>
+							<a class="smoothscroll" href="#Array">Array</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Vector">Vector</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature1">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include1">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init1">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Forward_list">Forward list</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature2">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include2">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init2">init</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#unique">unique</a>
+								</nav>
+							<a class="smoothscroll" href="#List">List</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature3">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include3">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init3">init</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#unique1">unique</a>
+								</nav>
+							<a class="smoothscroll" href="#Set">Set</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature4">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include4">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init4">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Unordered_set">Unordered set</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature5">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include5">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init5">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Map">Map</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature6">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include6">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init6">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Unordered_map">Unordered map</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature7">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include7">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init7">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Queue">Queue</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature8">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include8">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init8">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Deque">Deque</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature9">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include9">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init9">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Stack">Stack</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#feature10">feature</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#include10">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init10">init</a>
+								</nav>
+							<a class="smoothscroll" href="#Heap">Heap</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#include11">include</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#init11">init</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#get_front">get front</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#add_element">add element</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#remove_element">remove element</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#sort">sort</a>
+								</nav>
+							<a class="smoothscroll" href="#Compare_Tables">Compare Tables</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#Compare_arrays">Compare arrays</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#Compare_containers">Compare containers</a>
+								</nav>
+							<a class="smoothscroll" href="#reference">reference</a>
+							</nav>
+						</nav>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+<!--scroll up-->
+<div class="scrollup">
+<a href="#"><i class="fa fa-chevron-up"></i></a>
+</div>	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://zheminggu.com/blog_assets/js/jquert-3.4.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
+    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script> 
+    $(document).ready(function(){
+		// add reuseable header
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderBlogs");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
+		
+		// add reuseable navbar
+		try{
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#steam");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+	 	}
+    });	
+    </script> 
+</body>
+</html>
