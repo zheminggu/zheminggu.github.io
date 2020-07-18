@@ -129,7 +129,7 @@
 		
 		// add reuseable navbar
 		try{
-			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+			$.get("https://zheminggu.com/myprojectnavbartemplete.html", function(data){
 				var wrapper = document.createElement('div');
 				wrapper.innerHTML = data;
 				var active_el = wrapper.querySelector("#game_development");
@@ -138,7 +138,7 @@
 			});
 		}catch(e){
 //			console.log(e);
-			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+			$("#navbar").load("https://zheminggu.com/myprojectnavbartemplete.html"); 
 	 	}
     });	
     </script> 
