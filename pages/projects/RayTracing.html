@@ -137,7 +137,7 @@
 			$.get("https://zheminggu.com/myprojectnavbartemplete.html", function(data){
 				var wrapper = document.createElement('div');
 				wrapper.innerHTML = data;
-				var active_el = wrapper.querySelector("#game_development");
+				var active_el = wrapper.querySelector("#graduate");
 				active_el.classList.add('active');
 				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
 			});
