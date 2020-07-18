@@ -269,7 +269,7 @@
 			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
 				var wrapper = document.createElement('div');
 				wrapper.innerHTML = data;
-				var active_el = wrapper.querySelector("#steam");
+				var active_el = wrapper.querySelector("#program_languages");
 				active_el.classList.add('active');
 				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
 			});
