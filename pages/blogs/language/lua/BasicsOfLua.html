@@ -1,0 +1,150 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+    <meta name="author" content="">  
+	
+    <link rel="icon" href="https://zheminggu.com/zheminggu_icon.ico">
+	  <title>BasicsOfLua</title>
+     
+	  <!-- Bootstrap CSS -->
+  	<link href="https://zheminggu.com/blog_assets/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://zheminggu.com/blog_assets/css/style.css" rel="stylesheet">
+	  <script src="https://kit.fontawesome.com/971749d42b.js" crossorigin="anonymous"></script>
+</head> 
+
+<body>
+	<!--header--> 
+	<div id ="header"></div>
+
+	<!--content-->
+	<div class="container-fluid">
+		<div class="row">
+			<!--navbar-->
+			<div id = "navbar"></div>
+
+			<div class="col-8 markdown-body">
+				<h1>Lua</h1>
+				<h2 id="Fundamental_knowledge">Fundamental knowledge</h2>
+				<h3 id="define_a_variable">define a variable</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+local example =1
+						</code>
+					</pre>
+				<h3 id="define_a_function">define a function</h3>
+					<p><b>!!! All functions you want to use must define before where you write !!!</b></p>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+local function example_function()
+
+end
+
+local function add_function(num1, num2)
+    local answer= num1+ num2
+    <span style="color: rgb(228, 27, 218);">return</span> answer
+end
+
+local var = add(1,2)
+						</code>
+					</pre>
+				<h3 id="if">if</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+local example = 1 
+
+if example == 10 then
+    
+elseif example &gt 0 then
+    
+else
+    
+end 
+						</code>
+					</pre>
+				<h3 id="loops">loops</h3>
+					<pre class="line-left" style="background-color: rgb(239, 240, 241); border-radius: 3px; padding-left: 12px; padding-right: 8px;">
+						<code>
+for i = 0, 10, 1 do
+    print(i)
+end
+
+while example &gt= 3 do
+    print("it's still 3 or more")
+end
+						</code>
+					</pre>
+				<h2 id="reference">reference</h2>
+					<p><a href = "http://dontstarveapi.com/lua/fundamental-blocks/">don't starve unofficial api</a> </p>
+					<p><a href = "http://www.lua.org/manual/5.1/">lua official document</a></p>
+				</div>
+
+			<div class="col">
+				<div class="line-left blog-content-nav">
+					<nav class="navbar navbar-light bg-light">
+						<nav class="nav nav-pills flex-column">
+							<a class="smoothscroll" href="#Fundamental_knowledge">Fundamental knowledge</a>
+							<nav class="nav nav-pills flex-column">
+								<a class=" ml-3 my-1 smoothscroll" href="#define_a_variable">define a variable</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#define_a_function">define a function</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#if">if</a>
+								<a class=" ml-3 my-1 smoothscroll" href="#loops">loops</a>
+								</nav>
+							<a class="smoothscroll" href="#reference">reference</a>
+							</nav>
+						</nav>
+					</div>
+				</div>
+
+		</div>
+	</div>
+
+<!--scroll up-->
+<div class="scrollup">
+<a href="#"><i class="fa fa-chevron-up"></i></a>
+</div>	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://zheminggu.com/blog_assets/js/jquert-3.4.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://zheminggu.com/blog_assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="https://zheminggu.com/blog_assets/js/main.js"></script>
+    <script src="https://zheminggu.com/blog_assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script> 
+    $(document).ready(function(){
+		// add reuseable header
+		try{
+			$.get("https://zheminggu.com/myheadertemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#HeaderBlogs");
+				active_el.classList.add('active');
+				document.querySelector('#header').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+			console.log(e);
+			$("#header").load("https://zheminggu.com/myheadertemplete.html"); 
+		}
+		
+		// add reuseable navbar
+		try{
+			$.get("https://zheminggu.com/myblognavbartemplete.html", function(data){
+				var wrapper = document.createElement('div');
+				wrapper.innerHTML = data;
+				var active_el = wrapper.querySelector("#program_languages");
+				active_el.classList.add('active');
+				document.querySelector('#navbar').appendChild(wrapper.cloneNode(true));
+			});
+		}catch(e){
+//			console.log(e);
+			$("#navbar").load("https://zheminggu.com/myblognavbartemplete.html"); 
+	 	}
+    });	
+    </script> 
+</body>
+</html>
