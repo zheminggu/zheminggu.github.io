@@ -22,5 +22,5 @@ def get_ids(website_url=""):
 
 
 if __name__ == "__main__":
-    ids = get_ids("https://zheminggu.com/myheadertemplete.html")
+    ids = get_ids("https://zheminggu.github.io/myheadertemplete.html")
     print(ids)

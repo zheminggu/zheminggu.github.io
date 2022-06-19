@@ -38,7 +38,7 @@ def convert_file(input_file, output_path, header_template_url, header_template_a
 
 def head_converter(out_content, input_file_path, out_file_name):
     title = os.path.join(input_file_path, out_file_name)
-    s_f = requests.get("https://zheminggu.com/myheadtemplate.html")
+    s_f = requests.get("https://zheminggu.github.io/myheadtemplate.html")
     script_data = s_f.text
     script_data = "<!doctype html> \n" + "<html lang=\"en\"> \n" + "<head> \n" + script_data
 
@@ -407,11 +407,11 @@ def scroll_up():
 
 def body_script(header_template_url, header_template_active, navbar_template_url, navbar_template_active):
     active = "steam"
-    s_f = requests.get("https://zheminggu.com/myscripttemplete.html")
+    s_f = requests.get("https://zheminggu.github.io/myscripttemplete.html")
     script_data = s_f.text
-    script_data = script_data.replace("https://zheminggu.com/myheadertemplete.html", f"{header_template_url}")
+    script_data = script_data.replace("https://zheminggu.github.io/myheadertemplete.html", f"{header_template_url}")
     script_data = script_data.replace("#HeaderBlogs", f"#{header_template_active}")
-    script_data = script_data.replace("https://zheminggu.com/myblognavbartemplete.html", f"{navbar_template_url}")
+    script_data = script_data.replace("https://zheminggu.github.io/myblognavbartemplete.html", f"{navbar_template_url}")
     script_data = script_data.replace("#steam", f"#{navbar_template_active}")
     script_data += "\n"
     return script_data

@@ -42,7 +42,7 @@ class MyWidget(QWidget):
         self.header_template_input_label = QLabel("header template")
         # add input text line
         self.header_template_input_text = QLineEdit(
-            "https://zheminggu.com/myheadertemplete.html")
+            "https://zheminggu.github.io/myheadertemplete.html")
         self.header_template_input_text.returnPressed.connect(
             self.on_header_template_entered)
         # add combo box
@@ -60,7 +60,7 @@ class MyWidget(QWidget):
         self.navbar_template_input_label = QLabel("navbar template")
         # add user input text line
         self.navbar_template_input_text = QLineEdit(
-            "https://zheminggu.com/myblognavbartemplete.html")
+            "https://zheminggu.github.io/myblognavbartemplete.html")
         self.navbar_template_input_text.returnPressed.connect(
             self.on_navbar_template_entered)
         # add combo box
